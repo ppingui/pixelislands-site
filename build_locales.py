@@ -65,6 +65,12 @@ L = {
     cta_h2="Bereit für deine erste Insel?", cta_p="Kostenlos im App Store. Dein nächster Spaziergang zählt schon.",
     footer_made="© 2026 Pixel Islands · Gemacht mit 🏝️ und vielen Spaziergängen",
     foot_support="Support", foot_privacy="Datenschutz", foot_store="App Store",
+    nav_guides="Guides",
+    guides_h2="Gehen, gut recherchiert",
+    guides_p="Guides vom Pixel-Islands-Team, damit deine Schritte zählen.",
+    g1t="Die 7 besten Walking-Games fürs iPhone", g1d="Gemütliche Aufbau-Spiele, Sammel-Kreaturen, Zombie-Fluchten — ehrlich verglichen.",
+    g2t="So macht Gehen Spaß", g2d="12 Ideen, die auch Woche zwei überleben.",
+    g3t="Wie viele Schritte pro Tag brauchst du?", g3d="Spoiler: 10.000 waren eine Werbekampagne aus den 60ern.",
 ),
 "fr": dict(
     lang="fr", og_locale="fr_FR",
@@ -109,6 +115,12 @@ L = {
     cta_h2="Prêt à faire grandir votre première île ?", cta_p="Gratuit sur l'App Store. Votre prochaine promenade compte déjà.",
     footer_made="© 2026 Pixel Islands · Fait avec 🏝️ et beaucoup de marche",
     foot_support="Assistance", foot_privacy="Confidentialité", foot_store="App Store",
+    nav_guides="Guides",
+    guides_h2="La marche, étudiée",
+    guides_p="Les guides de l'équipe Pixel Islands pour des pas qui comptent.",
+    g1t="Les 7 meilleurs jeux de marche sur iPhone", g1d="Builders cosy, collection de créatures, évasions zombies — comparés honnêtement.",
+    g2t="Comment rendre la marche amusante", g2d="12 idées qui tiennent au-delà de la deuxième semaine.",
+    g3t="Combien de pas par jour vous faut-il ?", g3d="Spoiler : 10 000, c'était une pub des années 60.",
 ),
 "es": dict(
     lang="es", og_locale="es_ES",
@@ -153,6 +165,12 @@ L = {
     cta_h2="¿Listo para hacer crecer tu primera isla?", cta_p="Gratis en el App Store. Tu próximo paseo ya cuenta.",
     footer_made="© 2026 Pixel Islands · Hecho con 🏝️ y muchos paseos",
     foot_support="Soporte", foot_privacy="Privacidad", foot_store="App Store",
+    nav_guides="Guías",
+    guides_h2="Caminar, investigado",
+    guides_p="Guías del equipo de Pixel Islands para que tus pasos cuenten.",
+    g1t="Los 7 mejores juegos de caminar para iPhone", g1d="Builders acogedores, colección de criaturas, huidas zombis — comparados con honestidad.",
+    g2t="Cómo hacer que caminar sea divertido", g2d="12 ideas que sobreviven a la segunda semana.",
+    g3t="¿Cuántos pasos al día necesitas?", g3d="Spoiler: 10.000 fue una campaña publicitaria de los 60.",
 ),
 "ja": dict(
     lang="ja", og_locale="ja_JP",
@@ -197,6 +215,12 @@ L = {
     cta_h2="最初の島を育てはじめよう", cta_p="App Storeで無料。次の散歩からもう始まっています。",
     footer_made="© 2026 Pixel Islands · 🏝️とたくさんの散歩から生まれました",
     foot_support="サポート", foot_privacy="プライバシー", foot_store="App Store",
+    nav_guides="ガイド",
+    guides_h2="歩くことを、調べてみた",
+    guides_p="歩数を意味あるものにする、Pixel Islandsチームのガイド。",
+    g1t="iPhone向けウォーキングゲーム ベスト7", g1d="ゆったり系からクリーチャー収集、ゾンビ脱出まで。正直に比較。",
+    g2t="ウォーキングを楽しくする方法", g2d="2週目も続く、12のアイデア。",
+    g3t="1日に必要な歩数は?", g3d="ネタバレ:1万歩は60年代の広告でした。",
 ),
 "pt-br": dict(
     lang="pt-BR", og_locale="pt_BR",
@@ -241,6 +265,12 @@ L = {
     cta_h2="Pronto para criar sua primeira ilha?", cta_p="Grátis na App Store. Sua próxima caminhada já conta.",
     footer_made="© 2026 Pixel Islands · Feito com 🏝️ e muitas caminhadas",
     foot_support="Suporte", foot_privacy="Privacidade", foot_store="App Store",
+    nav_guides="Guias",
+    guides_h2="Caminhar, pesquisado",
+    guides_p="Guias do time do Pixel Islands para fazer seus passos valerem.",
+    g1t="Os 7 melhores jogos de caminhada para iPhone", g1d="Builders aconchegantes, coleção de criaturas, fugas de zumbis — comparados com honestidade.",
+    g2t="Como tornar a caminhada divertida", g2d="12 ideias que sobrevivem à segunda semana.",
+    g3t="Quantos passos por dia você precisa?", g3d="Spoiler: 10.000 foi uma campanha publicitária dos anos 60.",
 ),
 "ru": dict(
     lang="ru", og_locale="ru_RU",
@@ -285,6 +315,12 @@ L = {
     cta_h2="Готов вырастить первый остров?", cta_p="Бесплатно в App Store. Следующая прогулка уже идёт в счёт.",
     footer_made="© 2026 Pixel Islands · Сделано с 🏝️ и множеством прогулок",
     foot_support="Поддержка", foot_privacy="Конфиденциальность", foot_store="App Store",
+    nav_guides="Гайды",
+    guides_h2="Ходьба: разбор по фактам",
+    guides_p="Гайды команды Pixel Islands о том, как заставить шаги работать.",
+    g1t="7 лучших игр-шагомеров для iPhone", g1d="Уютные строилки, коллекции существ, побеги от зомби — честное сравнение.",
+    g2t="Как сделать ходьбу интересной", g2d="12 идей, которые переживут вторую неделю.",
+    g3t="Сколько шагов в день нужно?", g3d="Спойлер: 10 000 — рекламная кампания 60-х.",
 ),
 "uk": dict(
     lang="uk", og_locale="uk_UA",
@@ -329,6 +365,12 @@ L = {
     cta_h2="Готовий виростити перший острів?", cta_p="Безкоштовно в App Store. Наступна прогулянка вже йде в залік.",
     footer_made="© 2026 Pixel Islands · Зроблено з 🏝️ та безліччю прогулянок",
     foot_support="Підтримка", foot_privacy="Конфіденційність", foot_store="App Store",
+    nav_guides="Гайди",
+    guides_h2="Ходьба: розбір по фактах",
+    guides_p="Гайди команди Pixel Islands про те, як змусити кроки працювати.",
+    g1t="7 найкращих ігор-крокомірів для iPhone", g1d="Затишні будувалки, колекції істот, втечі від зомбі — чесне порівняння.",
+    g2t="Як зробити ходьбу цікавою", g2d="12 ідей, що переживуть другий тиждень.",
+    g3t="Скільки кроків на день потрібно?", g3d="Спойлер: 10 000 — рекламна кампанія 60-х.",
 ),
 }
 
@@ -384,6 +426,7 @@ TEMPLATE = '''<!DOCTYPE html>
       <a href="#features">%%NAV_FEATURES%%</a>
       <a href="#themes">%%NAV_ISLANDS%%</a>
       <a href="#faq">FAQ</a>
+      <a href="#guides">%%NAV_GUIDES%%</a>
       <a class="cta-mini" href="%%APP_URL%%">%%NAV_DL%%</a>
     </nav>
   </div>
@@ -479,6 +522,20 @@ TEMPLATE = '''<!DOCTYPE html>
       <div class="section-head"><h2>%%FAQ_H2%%</h2></div>
       <div class="faq">
 %%FAQ_HTML%%
+      </div>
+    </div>
+  </section>
+
+  <section id="guides">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>%%GUIDES_H2%%</h2>
+        <p>%%GUIDES_P%%</p>
+      </div>
+      <div class="guide-cards">
+        <a href="guides/best-walking-games-iphone/">%%G1T%%<small>%%G1D%%</small></a>
+        <a href="guides/how-to-make-walking-fun/">%%G2T%%<small>%%G2D%%</small></a>
+        <a href="guides/how-many-steps-a-day/">%%G3T%%<small>%%G3D%%</small></a>
       </div>
     </div>
   </section>
@@ -600,6 +657,10 @@ def build(locale_dir, t):
         "%%F1T%%": t["f1t"], "%%F1P%%": t["f1p"], "%%F2T%%": t["f2t"], "%%F2P%%": t["f2p"],
         "%%F3T%%": t["f3t"], "%%F3P%%": t["f3p"], "%%F4T%%": t["f4t"], "%%F4P%%": t["f4p"],
         "%%F5T%%": t["f5t"], "%%F5P%%": t["f5p"], "%%F6T%%": t["f6t"], "%%F6P%%": t["f6p"],
+        "%%NAV_GUIDES%%": t["nav_guides"],
+        "%%GUIDES_H2%%": t["guides_h2"], "%%GUIDES_P%%": t["guides_p"],
+        "%%G1T%%": t["g1t"], "%%G1D%%": t["g1d"], "%%G2T%%": t["g2t"], "%%G2D%%": t["g2d"],
+        "%%G3T%%": t["g3t"], "%%G3D%%": t["g3d"],
         "%%THEMES_H2%%": t["themes_h2"], "%%THEMES_P%%": t["themes_p"],
         "%%TN1%%": t["theme_names"][0], "%%TN2%%": t["theme_names"][1],
         "%%TN3%%": t["theme_names"][2], "%%TN4%%": t["theme_names"][3],
