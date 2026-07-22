@@ -143,3 +143,21 @@ footer.site a:hover { text-decoration: underline; }
 .doc ul { padding-left: 22px; margin: 8px 0; }
 .doc a { color: var(--accent-dark); font-weight: 700; }
 .doc .card { background: var(--card); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); margin: 18px 0; }
+
+/* Guides / articles */
+.doc.article { max-width: 720px; }
+.doc .meta-row { color: var(--ink-soft); font-weight: 700; font-size: 0.9rem; margin-bottom: 26px; }
+.doc table { width: 100%; border-collapse: collapse; margin: 18px 0; background: var(--card); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); font-size: 0.95rem; }
+.doc th, .doc td { padding: 10px 14px; text-align: left; border-bottom: 1px solid rgba(108,99,210,0.1); }
+.doc th { background: rgba(108,99,210,0.08); font-weight: 800; }
+.doc .table-wrap { overflow-x: auto; }
+.cta-box { background: var(--card); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); margin: 30px 0; display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+.cta-box img { width: 64px; height: 64px; border-radius: 14px; }
+.cta-box .cta-text { flex: 1; min-width: 220px; }
+.cta-box .cta-text strong { display: block; font-size: 1.05rem; }
+.cta-box .cta-text span { color: var(--ink-soft); font-size: 0.92rem; }
+.cta-box a.btn { background: var(--ink); color: #fff; padding: 10px 20px; border-radius: 999px; font-weight: 800; text-decoration: none; white-space: nowrap; }
+.guide-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+@media (max-width: 760px) { .guide-cards { grid-template-columns: 1fr; } }
+.guide-cards a { background: var(--card); border-radius: var(--radius); padding: 22px; box-shadow: var(--shadow); text-decoration: none; color: var(--ink); font-weight: 800; }
+.guide-cards a small { display: block; margin-top: 8px; color: var(--ink-soft); font-weight: 600; }
