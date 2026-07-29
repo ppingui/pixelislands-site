@@ -19,6 +19,24 @@ HREFLANG_OF = {"": "en", "de": "de", "fr": "fr", "es": "es", "ja": "ja",
 # ---------------------------------------------------------------- articles
 # i18n: locale-dir -> (card title, card blurb). "" is English.
 ARTICLES = [
+    dict(slug="best-step-tracker-apps-iphone", i18n={
+        "": ("Best step tracker apps for iPhone",
+             "Apple Health, Pedometer++, StepsApp, Pacer — and how to choose."),
+        "de": ("Die besten Schrittzähler-Apps fürs iPhone",
+               "Widget, Abo, Genauigkeit — und wann die Health-App reicht."),
+        "fr": ("Meilleures applications podomètre iPhone",
+               "Widgets, abonnements, précision : le comparatif honnête."),
+        "es": ("Mejores apps para contar pasos en iPhone",
+               "Y por qué el podómetro que ya llevas dentro puede bastarte."),
+        "ja": ("iPhoneの歩数計アプリおすすめ",
+               "内蔵の万歩計で十分？無料アプリ5本を正直に比較"),
+        "pt-br": ("Melhores apps contadores de passos",
+                  "Seu iPhone já conta seus passos. Quando vale instalar um app."),
+        "ru": ("Лучшие шагомеры для iPhone",
+               "Встроенный счётчик, виджеты, подписки и точность — честно"),
+        "uk": ("Найкращі крокоміри для iPhone",
+               "Чи потрібен окремий застосунок — і який обрати у 2026-му"),
+    }),
     dict(slug="best-walking-games-iphone", i18n={
         "": ("7 best walking games for iPhone",
              "Cozy builders, creature collectors, zombie escapes — honestly compared."),
