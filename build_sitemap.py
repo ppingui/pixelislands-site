@@ -1,34 +1,65 @@
 #!/usr/bin/env python3
-"""Regenerate sitemap.xml from the actual set of pages. Run after adding pages."""
+"""Regenerate sitemap.xml by walking the site directory.
+
+Usage: python3 build_sitemap.py
+
+Every directory containing an index.html becomes a URL, so newly added pages are
+picked up automatically. Priorities are derived from path shape.
+"""
 import pathlib
 
 SITE = "https://pixelislands.app"
-LASTMOD = "2026-07-22"  # bump when content changes materially
-LOCALES = ["de", "fr", "es", "ja", "pt-br", "ru", "uk"]
-SLUGS = ["best-walking-games-iphone", "how-to-make-walking-fun", "how-many-steps-a-day"]
+LASTMOD = "2026-07-29"
+LOCALES = {"de", "fr", "es", "ja", "pt-br", "ru", "uk"}
+SKIP_DIRS = {".git", "assets", "node_modules"}
 
-entries = []  # (path, changefreq, priority)
-entries.append(("/", "weekly", "1.0"))
-for l in LOCALES:
-    entries.append((f"/{l}/", "weekly", "0.9"))
-for s in SLUGS:
-    entries.append((f"/guides/{s}/", "monthly", "0.8"))
-for l in LOCALES:
-    for s in SLUGS:
-        entries.append((f"/{l}/guides/{s}/", "monthly", "0.7"))
-entries.append(("/support/", "monthly", "0.5"))
-entries.append(("/privacy/", "yearly", "0.3"))
+ROOT = pathlib.Path(__file__).parent
 
-root = pathlib.Path(__file__).parent
-missing = [p for p, _, _ in entries if not (root / p.lstrip("/") / "index.html").exists()]
-if missing:
-    raise SystemExit(f"Refusing to write sitemap; missing pages: {missing}")
 
-urls = "\n".join(
-    f"  <url>\n    <loc>{SITE}{p}</loc>\n    <lastmod>{LASTMOD}</lastmod>\n"
-    f"    <changefreq>{c}</changefreq>\n    <priority>{pr}</priority>\n  </url>"
-    for p, c, pr in entries
-)
-xml = f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}\n</urlset>\n'
-(root / "sitemap.xml").write_text(xml)
-print(f"sitemap.xml written with {len(entries)} URLs")
+def classify(parts):
+    """parts: URL path segments, e.g. ('de', 'guides', 'slug'). -> (changefreq, priority)"""
+    loc = parts[0] in LOCALES if parts else False
+    rest = parts[1:] if loc else parts
+
+    if not rest:                                    # homepage
+        return ("weekly", "0.9" if loc else "1.0")
+    if rest == ("guides",):                         # guides hub
+        return ("weekly", "0.7" if loc else "0.8")
+    if rest[0] == "guides":                         # article
+        return ("monthly", "0.7" if loc else "0.8")
+    if rest == ("support",):
+        return ("monthly", "0.5")
+    if rest == ("privacy",):
+        return ("yearly", "0.3")
+    return ("monthly", "0.5")
+
+
+def discover():
+    urls = []
+    for idx in sorted(ROOT.rglob("index.html")):
+        rel = idx.relative_to(ROOT).parent
+        parts = rel.parts
+        if any(p in SKIP_DIRS or p.startswith(".") for p in parts):
+            continue
+        path = "/" + ("/".join(parts) + "/" if parts else "")
+        cf, pr = classify(parts)
+        urls.append((path, cf, pr))
+    # homepage first, then by priority desc, then alphabetically
+    urls.sort(key=lambda u: (u[0] != "/", -float(u[2]), u[0]))
+    return urls
+
+
+if __name__ == "__main__":
+    urls = discover()
+    body = "\n".join(
+        f"  <url>\n    <loc>{SITE}{p}</loc>\n    <lastmod>{LASTMOD}</lastmod>\n"
+        f"    <changefreq>{cf}</changefreq>\n    <priority>{pr}</priority>\n  </url>"
+        for p, cf, pr in urls
+    )
+    xml = ('<?xml version="1.0" encoding="UTF-8"?>\n'
+           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+           f"{body}\n</urlset>\n")
+    (ROOT / "sitemap.xml").write_text(xml, encoding="utf-8")
+    print(f"sitemap.xml written with {len(urls)} URLs")
+    for p, _, pr in urls:
+        print(f"  {pr}  {p}")

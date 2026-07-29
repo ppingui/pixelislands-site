@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apple Watchの歩数がiPhoneに同期されない？効く対処法8つ</title>
+<meta name="description" content="Apple Watchの歩数がiPhoneに同期されない。でも歩数が消えていることはまずありません。10秒でできる同期の促しから、最終手段のペアリング解除まで、順番に試せる8つの対処法を解説します。">
+<link rel="canonical" href="https://pixelislands.app/ja/guides/apple-watch-steps-not-syncing/">
+<link rel="alternate" hreflang="en" href="https://pixelislands.app/guides/apple-watch-steps-not-syncing/">
+<link rel="alternate" hreflang="de" href="https://pixelislands.app/de/guides/apple-watch-steps-not-syncing/">
+<link rel="alternate" hreflang="fr" href="https://pixelislands.app/fr/guides/apple-watch-steps-not-syncing/">
+<link rel="alternate" hreflang="es" href="https://pixelislands.app/es/guides/apple-watch-steps-not-syncing/">
+<link rel="alternate" hreflang="ja" href="https://pixelislands.app/ja/guides/apple-watch-steps-not-syncing/">
+<link rel="alternate" hreflang="pt-BR" href="https://pixelislands.app/pt-br/guides/apple-watch-steps-not-syncing/">
+<link rel="alternate" hreflang="ru" href="https://pixelislands.app/ru/guides/apple-watch-steps-not-syncing/">
+<link rel="alternate" hreflang="uk" href="https://pixelislands.app/uk/guides/apple-watch-steps-not-syncing/">
+<link rel="alternate" hreflang="x-default" href="https://pixelislands.app/guides/apple-watch-steps-not-syncing/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Apple Watchの歩数がiPhoneに同期されないときの直し方">
+<meta property="og:description" content="歩数はたいてい消えていません。同期の遅れか、データソースの設定が原因です。かんたんな順に8つの対処法を紹介します。">
+<meta property="og:url" content="https://pixelislands.app/ja/guides/apple-watch-steps-not-syncing/">
+<meta property="og:image" content="https://pixelislands.app/assets/hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="../../../assets/appicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Apple Watchの歩数がiPhoneに同期されないときの直し方",
+  "description": "Apple Watchの歩数がiPhoneで消えたように見える理由と、ヘルスケアの同期を促す方法からペアリング解除という最終手段まで、順番に試せる8つの対処法。",
+  "image": "https://pixelislands.app/assets/hero.jpg",
+  "datePublished": "2026-07-29",
+  "dateModified": "2026-07-29",
+  "author": { "@type": "Organization", "name": "Pixel Islands", "url": "https://pixelislands.app/" },
+  "publisher": { "@type": "Organization", "name": "Pixel Islands", "logo": { "@type": "ImageObject", "url": "https://pixelislands.app/assets/appicon.png" } },
+  "mainEntityOfPage": "https://pixelislands.app/ja/guides/apple-watch-steps-not-syncing/",
+  "inLanguage": "ja"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Apple WatchのほうがiPhoneより歩数が多いのはなぜですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "測っているものが違うからです。iPhoneが歩数を数えるのは、ポケットの中や体に密着したバッグなど、実際に身につけているあいだだけ。一方Apple Watchは手首に着けているあいだずっと数えていて、多くの方にとってそれは一日のはるかに長い時間にあたります。そのためWatchの合計のほうが多くなるのが普通で、これは不具合ではなく想定どおりの動作です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ヘルスケアはiPhoneとApple Watchの歩数を足し算していますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "いいえ。ヘルスケアは重複する歩数データを合算せず、重複を除いて処理します。ある時間帯についてはひとつのソースを選ぶため、両方の端末が記録した1回の散歩も1回分としてカウントされます。もし単純に足していたら、スマホをポケットに入れて歩くたびに二重計上されてしまいます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apple Watchの歩数はサードパーティ製アプリにも反映されますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい。そのアプリにヘルスケアから歩数を読み取る権限があり、あなたが許可していれば反映されます。サードパーティ製アプリが読んでいるのは、iPhoneのヘルスケアが表示しているのと同じ、重複を除いたHealthKitの歩数です。つまりヘルスケア側が正しくなれば、アプリ側も正しくなります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apple Watchの歩数をiPhoneに強制的に同期するには？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Watchを手首に着けたまま、ロックを解除したiPhoneの近くに置き、iPhoneでヘルスケアアプリを開いて、歩数の詳細画面を30〜60秒ほど表示したままにしてください。Watchはバッテリーを節約するためヘルスケアデータをまとめて断続的に送っており、ヘルスケアを開くと待機中のデータが送られてくることが多いのです。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "同期されていないApple Watchの歩数は、もう戻ってきませんか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "たいていは大丈夫です。Watchはヘルスケアデータを本体に保存しておき、iPhoneと通信できるタイミングで同期します。まだ表示されていない歩数も、多くの場合はWatchの中で転送を待っている状態です。本当に失われるおもなケースは、データが同期される前にWatchを消去したりペアリングを解除したりしてしまったときです。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="../../">
+      <img src="../../../assets/appicon.png" alt="Pixel Islandsのアプリアイコン" width="36" height="36">
+      Pixel Islands
+    </a>
+    <nav>
+      <a href="../../#features">機能</a>
+      <a href="../">ガイド</a>
+      <a href="../../../support/">サポート</a>
+      <a class="cta-mini" href="https://apps.apple.com/app/pixel-islands-step-track-game/id6760819710">ダウンロード</a>
+    </nav>
+  </div>
+</header>
+
+<main class="doc article">
+  <h1>Apple Watchの歩数がiPhoneに同期されないときの直し方</h1>
+  <p class="meta-row">2026年7月更新 · 読了目安7分</p>
+
+  <p>まず落ち着いてください。<strong>あなたの歩数は、ほぼ確実に消えていません。</strong>iPhoneもApple Watchもそれぞれ歩数を数えていますが、ヘルスケアはそれらを足し算するのではなく、重複を除いてひとつにまとめます。つまり「数字がおかしい」と感じるときの正体は、たいてい同期の遅れか、データソースの優先順位の問題であって、データが失われたわけではないのです。Watchはバッテリーを節約するためにヘルスケアデータをまとめて断続的にiPhoneへ送っており、そのぶん数分から数時間の遅れが出ることもあります。</p>
+
+  <p><strong>まずは10秒でできる、いちばんよく効く方法から。</strong>Watchを手首に着け、iPhoneのロックを解除し、両方を近づけた状態でiPhoneの<strong>ヘルスケア</strong>アプリを開きます。<em>歩数</em>の項目をタップして、その画面を30〜60秒ほど開いたままにしてください。たいていはこれで、その日のWatchのデータが送られてきます。</p>
+
+  <p>それでも解決しない場合は、以下を上から順に試してください。影響の少ないものから順に並べています。いきなり8番目に飛ばないようご注意を。</p>
+
+  <h2>1. 両方の端末が同じApple IDか確認する</h2>
+  <p>ヘルスケアデータがやり取りされるのは、互いにペアリングされていて、同じApple アカウント（Apple ID）にサインインしているWatchとiPhoneのあいだだけです。最近アカウントを変更した、バックアップから復元した、誰かからWatchを譲り受けた——そんな心当たりがあるなら、まずここを確認しましょう。</p>
+  <p>iPhoneでは<strong>設定 → 画面上部の自分の名前</strong>。Watchでは<strong>設定 → 一般 → 情報</strong>、またはiPhoneのWatchアプリで、そのWatchが本当にペアリングされているものか確認します。アカウントが違っていた場合は、まずWatchのペアリング先のiPhoneを正しいアカウントにサインインさせてください。Watchはペアリング相手のiPhoneに従います。</p>
+  <p>知っておくと役立つこと。Watchの歩数をiPhoneに運んでいるのはiCloud同期ではありません。Watchはペアリング相手のiPhoneとBluetoothまたはWi-Fiで直接やり取りしています。iCloudが関係するのは自分の複数の端末<em>どうし</em>でヘルスケアデータを同期する場合だけで、環境によってはヘルスケアについては初期設定でオフになっています。</p>
+
+  <h2>2. ヘルスケアアプリを開いて同期を促す</h2>
+  <p>冒頭で紹介したのと同じ方法ですが、これだけで解決するケースが本当に多いので、あらためて一項目として挙げておきます。Watchは一歩ごとにリアルタイム送信しているわけではありません。データをためておいて、まとめて送っています。しかもWatchが低電力モードのとき、バッテリー残量が少ないとき、iPhoneの通信圏外にあるときは、バックグラウンド転送の優先度が下げられます。</p>
+  <p>手順はこうです。iPhoneのロックを解除し（ロック中はヘルスケアのデータベースが暗号化されていて書き込めません）、Watchを身につけたまま近くに置き、<strong>ヘルスケア → ブラウズ → アクティビティ → 歩数</strong>を開いて待ちます。グラフを下に引っ張って更新してみてください。だめだったと判断するのは、まるまる1分待ってからにしましょう。</p>
+  <p>Watchが実際に手首に着いていて、ロックが解除されているかどうかも確認を。外したままのWatchは、最後のデータをため込んだままになることがあります。</p>
+
+  <h2>3. ヘルスケアのデータソースと優先順位を確認する</h2>
+  <p>ここは自力ではまず見つけられない設定で、「歩数が消えたというより数字が合わない」という声のほとんどを説明してくれる場所でもあります。</p>
+  <p><strong>ヘルスケア → 右上のプロフィール画像をタップ</strong>を開きます。そこから、接続された端末の一覧と、ヘルスケアデータの読み取り・書き込みを許可しているアプリの一覧にたどり着けます。iOSのバージョンによって、この項目は<em>App</em>や<em>デバイス</em>、<em>データアクセスとデバイス</em>といった名称で表示されます。Appleはこの画面の名称や構成を何度か変更しているので、完全な一致を期待せず、お使いのiPhoneで実際に使われている表記を探してください。</p>
+  <p>そこで確認したいのは2点です。</p>
+  <ul>
+    <li><strong>Apple Watchがデバイス一覧に表示されているか。</strong>表示されていないなら、そのWatchはこのiPhoneのヘルスケアに一度もデータを書き込んでいないということ。同期の問題ではなくペアリングの問題です。</li>
+    <li><strong>歩数のソースの並び順。</strong>歩数のデータタイプを開き、データを提供しているソースの一覧を見てください。この順番が重要で、同じ時間帯を2つのソースがカバーしている場合、ヘルスケアは優先順位の高いほうを採用します。フィットネス系アプリや古い端末がWatchより上にあるなら、Watchを上にドラッグしましょう。</li>
+  </ul>
+  <p>サードパーティ製アプリも歩数をヘルスケアに書き込んでいる場合、合計が過大になったり不安定になったりする原因としてよくあります。歩数についてはそのアプリの<em>書き込み</em>権限だけを解除し、<em>読み取り</em>は残しておけます。たいていはそれこそが望んでいた状態のはずです。</p>
+
+  <h2>4. 接続を直す：Bluetooth、Wi-Fi、機内モードの小技</h2>
+  <p>Watchは近くにあるときはBluetoothで、両方が同じネットワークにあるときはWi-FiでiPhoneとつながります。どちらの経路も開いていないと、データは送られずに溜まっていきます。</p>
+  <p>iPhoneでBluetoothがオンになっているか（<strong>設定 → Bluetooth</strong>）、Wi-Fiをオフのままにしていないかを確認します。そのうえで、接続の停滞の大半を解消してくれるリセットを試しましょう。</p>
+  <ul>
+    <li>Watchで下から上にスワイプしてコントロールセンターを開き、<strong>機内モード</strong>のアイコンをタップしてオンにします。</li>
+    <li>15秒ほど待ちます。</li>
+    <li>もう一度タップしてオフに戻し、接続インジケータがiPhoneへの再接続を示すまで待ちます。</li>
+  </ul>
+  <p>Watchのコントロールセンターには接続状態のアイコンも表示されます。緑色のiPhoneのアイコンは、iPhoneと接続されているという意味です。赤い切断のアイコンが出ているなら原因はそこにあり、緑になるまではヘルスケアをいくらいじっても解決しません。</p>
+
+  <h2>5. 両方の端末を再起動する——ええ、本当に</h2>
+  <p>単純なわりに驚くほどよく効きますし、ちゃんと理由もあります。WatchとiPhoneのあいだの同期は、両側のバックグラウンドのデーモンを経由して行われます。OSアップデートの直後、長時間の圏外、ストレージ不足といったきっかけでどちらかが詰まってしまうと、うまく再試行されないまま止まってしまうのです。再起動すればその固まった状態がリセットされ、あらためて接続をやり直せます。「一度切って入れ直す」がここでは冗談ではなく、正しい診断手順である理由がこれです。</p>
+  <p>まずiPhoneを再起動し、完全に立ち上がってからロックを解除。次にWatchを再起動します（サイドボタンを長押しして電源オフ、またはWatchで<strong>設定 → 一般 → システム終了</strong>）。両方を近づけて、ヘルスケアを開きましょう。</p>
+
+  <h2>6. モーションとフィットネス、フィットネストラッキングがオンか確認する</h2>
+  <p>プライバシーの階層で歩数計測がオフになっていると、その先のすべてが動きません。しかもこの設定は、復元やプライバシー設定の見直しのついでに、気づかないうちに切り替わってしまうことがあります。</p>
+  <p>iPhoneでは<strong>設定 → プライバシーとセキュリティ → モーションとフィットネス</strong>。<em>フィットネストラッキング</em>がオンになっていること、そしてその下で使いたいアプリが有効になっていることを確認してください。</p>
+  <p>Watchについては、iPhoneで<strong>Watch</strong>アプリを開き、<strong>プライバシー</strong>の項目（watchOSのバージョンによってヘルスケアまたは一般のあたりにあります）を探して、そこでも<em>フィットネストラッキング</em>が有効か確認します。あわせて<strong>Watchアプリ → ヘルスケア → ヘルスケアの詳細</strong>も見ておくとよいでしょう。ここに手首検出と個人情報の設定があります。手首検出がオフになっていると、一部のアクティビティ計測に影響することがあります。</p>
+
+  <h2>7. iPhoneのストレージを確認する</h2>
+  <p>空き容量がほとんどないiPhoneでは、ヘルスケアのデータベースへの新しい記録の書き込みが失敗することがあります。しかもこの失敗は無言です。警告もエラーも出ず、ただ歩数が届かない。地味な原因ですが実際にあることで、「数週間前からWatchの同期が止まった」という症状そのものを引き起こします。</p>
+  <p><strong>設定 → 一般 → iPhoneストレージ</strong>を確認しましょう。空きが1GBを下回るあたりなら、使っていないアプリをいくつか取り除く、古い動画を消すなどして容量を空け、再起動してからヘルスケアを開いてください。ストレージの小さい古いモデルのWatchをお使いなら、Watchの<strong>設定 → 一般 → 使用状況</strong>でも同じ確認を。</p>
+
+  <h2>8. ペアリング解除と再ペアリング——正真正銘の最終手段</h2>
+  <p>これを試すのは、上のすべてを試してもだめで、Watchがヘルスケアのデータソースとして本当に一度も現れない場合だけにしてください。やり直すのに相応の時間がかかりますし、データを失うリスクも伴います。</p>
+  <p><strong>ここがいちばん大事な注意点です。</strong>iPhoneのWatchアプリからペアリングを解除すると、その前にWatchのバックアップが作成され、それがデータを守ってくれます。Watch本体の設定から直接消去した場合は、バックアップは作成されません。必ず<strong>iPhoneのWatchアプリ → すべてのWatch → Watchの横のⓘ → Apple Watchとのペアリングを解除</strong>から行い、最後まで完了させてください。Watchのバックアップはこのペアリング相手のiPhoneのバックアップに含まれるため、iPhone自体のバックアップも取っておきましょう。</p>
+  <p>ペアリングを解除する前に、両方の端末を長時間じっくり一緒にしておく時間を作ってください。Watchは手首に、iPhoneはロック解除して近くに、どちらもWi-Fiにつなぎ、充電もしておく。そうすれば、待機中のデータが転送されるチャンスがきちんと生まれます。いったんペアリングを解除してしまうと、同期されていないぶんはバックアップ頼みになります。</p>
+
+  <div class="cta-box">
+    <img src="../../../assets/appicon.png" alt="Pixel Islandsのアプリアイコン">
+    <div class="cta-text">
+      <strong>歩数が同期できたら、それを育ててみませんか</strong>
+      <span>Pixel Islandsは、ヘルスケアの歩数を8つのステージへ育つほっこりした島に変えます。iPhoneで無料。</span>
+    </div>
+    <a class="btn" href="https://apps.apple.com/app/pixel-islands-step-track-game/id6760819710">Pixel Islandsを入手</a>
+  </div>
+
+  <h2>数字が食い違う理由を理解する</h2>
+  <p>「同期されない」という相談の多くは、実は同期の失敗ではありません。2つの端末が、それぞれ正直に違うものを測っているだけなのです。ひと晩かけて再起動を繰り返す前に、知っておく価値があります。</p>
+
+  <p><strong>iPhoneが数えるのはポケットの歩数、Watchが数えるのは手首の歩数。</strong>iPhoneは物理的に身につけているあいだの動きしか記録しません。スマホを机に置いたままキッチンへ行った往復は、iPhoneには見えていないのです。一方Watchは、ほぼ一日じゅう手首にあります。だからWatchの合計のほうが多くなるのが普通ですし、スマホを机の横に置いてデスクワークをする方ほど、その差は大きくなります。</p>
+
+  <p><strong>ヘルスケアが表示しているのは重複を除いた合計であって、単純な足し算ではありません。</strong>ここがみんなつまずくところです。もしヘルスケアが両方の端末をそのまま足していたら、スマホをポケットに入れて歩いた分は二重に数えられ、1日の合計はとんでもない数字になってしまいます。そうではなく、時間帯が重なっている区間についてはひとつのソースを選んで採用しているのです。つまり画面の数字は「iPhone＋Watch」ではなく、統合された最善の推定タイムラインです。各端末の数字を手で足しても1日の合計と一致しないのはそのためですし、一致しないのが正しいのです。</p>
+
+  <p><strong>サードパーティ製アプリの数字は、アクティビティリングと少しずれることがあります。</strong>リングは歩数の表示ではありません。ムーブはアクティブカロリー、エクササイズは活発に動いた分数で測られています。HealthKitから歩数を読み取るアプリは、リングとはそもそも別の量を表示しているので、完全に一致することはありません。さらにタイミングの問題も重なります。午後4時に更新されたアプリは次の更新まで午後4時の数字を表示し続けますが、ヘルスケアはバックグラウンドで更新され続けているからです。</p>
+
+  <p>そもそもこの数字がどのくらいであるべきなのかが気になる方は、<a href="../how-many-steps-a-day/">1日に本当に必要な歩数は？</a>で研究が裏づけている内容をまとめています。ひとことで言えば、有用な範囲は多くの人が思っているより低めです。</p>
+
+  <h2>Pixel Islandsのような歩数アプリへの影響</h2>
+  <p>よく聞かれるので、手短に正直にお答えします。<a href="../../">Pixel Islands</a>はHealthKitから重複を除いた歩数を読み取っています。ヘルスケアアプリに表示されているのと同じ数字です。私たち自身が歩数を数えているわけではありませんし、Watchと直接やり取りもしていません。ヘルスケアがまだ持っていないデータを、私たちの側から引き出す手段はないのです。</p>
+  <p>実際の結論はシンプルです。<strong>ヘルスケアが正しくなれば、私たちも正しくなります。</strong>Pixel Islandsで今日の歩数が少なく見えるときは、まずヘルスケアアプリを開いて、その日のWatchのデータが届くまで少し待ってから戻ってきてください。ほとんどの場合、それで解決します。同じ理屈は<a href="../best-walking-games-iphone/">iPhoneのおすすめウォーキングゲーム</a>で紹介しているどのアプリにも当てはまります。すべて同じHealthKitの数字を読んでいるので、ヘルスケアを直せば全部まとめて直るというわけです。</p>
+  <p>ひとつ、私たちならではの点も。何もリセットされません。歩数が遅れて届いても、届いた時点でちゃんとカウントされます。同期の遅れであなたの島が罰を受けることはありません。</p>
+
+  <h2>それでも解決しないときは</h2>
+  <p>8つすべてを試してもWatchがヘルスケアに歩数を書き込まないなら、実機を見てもらう価値があります。そのパターンは、設定ではなくハードウェアやペアリングの不具合を示していることがあるからです。</p>
+  <ul>
+    <li>Pixel Islandsに関することなら<a href="https://pixelislands.app/support/">pixelislands.app/support</a>までご連絡ください。そのとき、ヘルスケアアプリの表示とアプリの表示を並べて教えていただけると助かります。その比較でほとんどのことがわかります。</li>
+    <li>Watch本体については、<a href="https://support.apple.com/">Appleサポート</a>がAppleの側からペアリングを確認できます。Watchがヘルスケアのデータソースとしてまったく現れない場合は、Genius Barの予約が正解です。</li>
+  </ul>
+</main>
+
+<footer class="site">
+  <div class="wrap cols">
+    <div>© 2026 Pixel Islands</div>
+    <div>
+      <a href="../../">ホーム</a>
+      <a href="../../../support/">サポート</a>
+      <a href="../../../privacy/">プライバシー</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

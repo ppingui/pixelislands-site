@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apps de Contagem de Passos Gastam Bateria? GPS vs. Sensores de Movimento</title>
+<meta name="description" content="Apps de contagem de passos gastam bateria? Contar passos no iPhone é praticamente de graça — o GPS é que custa caro. Como descobrir o app que realmente consome sua bateria.">
+<link rel="canonical" href="https://pixelislands.app/pt-br/guides/step-counter-battery-gps/">
+<link rel="alternate" hreflang="en" href="https://pixelislands.app/guides/step-counter-battery-gps/">
+<link rel="alternate" hreflang="de" href="https://pixelislands.app/de/guides/step-counter-battery-gps/">
+<link rel="alternate" hreflang="fr" href="https://pixelislands.app/fr/guides/step-counter-battery-gps/">
+<link rel="alternate" hreflang="es" href="https://pixelislands.app/es/guides/step-counter-battery-gps/">
+<link rel="alternate" hreflang="ja" href="https://pixelislands.app/ja/guides/step-counter-battery-gps/">
+<link rel="alternate" hreflang="pt-BR" href="https://pixelislands.app/pt-br/guides/step-counter-battery-gps/">
+<link rel="alternate" hreflang="ru" href="https://pixelislands.app/ru/guides/step-counter-battery-gps/">
+<link rel="alternate" hreflang="uk" href="https://pixelislands.app/uk/guides/step-counter-battery-gps/">
+<link rel="alternate" hreflang="x-default" href="https://pixelislands.app/guides/step-counter-battery-gps/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Apps de Contagem de Passos Gastam Bateria?">
+<meta property="og:description" content="Contar passos é praticamente de graça no iPhone. O GPS é que consome a bateria. Veja como diferenciar os dois.">
+<meta property="og:url" content="https://pixelislands.app/pt-br/guides/step-counter-battery-gps/">
+<meta property="og:image" content="https://pixelislands.app/assets/hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="../../../assets/appicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Apps de Contagem de Passos Gastam Bateria? GPS vs. Sensores de Movimento",
+  "description": "Por que contar passos custa quase nada de bateria no iPhone, por que o GPS custa, e como descobrir o app que realmente está consumindo a sua.",
+  "image": "https://pixelislands.app/assets/hero.jpg",
+  "datePublished": "2026-07-29",
+  "dateModified": "2026-07-29",
+  "author": { "@type": "Organization", "name": "Pixel Islands", "url": "https://pixelislands.app/" },
+  "publisher": { "@type": "Organization", "name": "Pixel Islands", "logo": { "@type": "ImageObject", "url": "https://pixelislands.app/assets/appicon.png" } },
+  "mainEntityOfPage": "https://pixelislands.app/pt-br/guides/step-counter-battery-gps/",
+  "inLanguage": "pt-BR"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Contadores de passos precisam de GPS?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Não. Os passos são contados pelo coprocessador de movimento de baixo consumo do iPhone, usando o acelerômetro, e não por posicionamento via satélite. O GPS só é necessário se um app quiser desenhar o seu trajeto num mapa ou medir a distância pelas ruas reais. Um contador de passos que apenas informa quantos passos você deu não tem motivo algum para pedir sua localização." }
+    },
+    {
+      "@type": "Question",
+      "name": "O app Saúde gasta bateria?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Praticamente não. O app Saúde é um repositório de dados que o seu iPhone já está coletando. O coprocessador de movimento conta os passos continuamente, esteja o app Saúde aberto ou não, então ler esses dados de volta custa quase nada. Apps que leem a contagem de passos do Apple Saúde herdam esse mesmo custo desprezível." }
+    },
+    {
+      "@type": "Question",
+      "name": "Por que meu iPhone tem dados de passos de dias em que nunca abri um app de atividade física?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Porque a contagem de passos é feita em hardware, não por um app. O coprocessador de movimento de baixo consumo acompanha o movimento o tempo todo e grava os dados no app Saúde em segundo plano. Os apps de atividade física não criam esses dados — eles apenas os leem, e é por isso que seu histórico de passos vai mais longe do que qualquer app que você instalou." }
+    },
+    {
+      "@type": "Question",
+      "name": "Como descubro qual app está consumindo a bateria do meu iPhone?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Abra os Ajustes, vá em Bateria e role até a lista de uso por app. Alterne entre as últimas 24 horas e os últimos 10 dias e observe a divisão entre tela ligada e segundo plano em cada app. Depois vá em Ajustes, Privacidade e Segurança, Serviços de Localização para ver quais apps têm a permissão Sempre — um app com muito tempo em segundo plano e localização Sempre costuma ser o culpado." }
+    },
+    {
+      "@type": "Question",
+      "name": "Um contador de passos sem GPS é melhor para a privacidade?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. Uma contagem de passos é só um número — ela diz que você caminhou, não onde. Um trajeto de GPS revela muito mais: alguns dias de caminhadas registradas mostram onde você mora, onde trabalha e quando está fora de casa. Um app que nunca pede permissão de localização não consegue construir esse histórico." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="../../">
+      <img src="../../../assets/appicon.png" alt="Ícone do app Pixel Islands" width="36" height="36">
+      Pixel Islands
+    </a>
+    <nav>
+      <a href="../../#features">Recursos</a>
+      <a href="../">Guias</a>
+      <a href="../../../support/">Suporte</a>
+      <a class="cta-mini" href="https://apps.apple.com/app/pixel-islands-step-track-game/id6760819710">Baixar</a>
+    </nav>
+  </div>
+</header>
+
+<main class="doc article">
+  <h1>Apps de Contagem de Passos Gastam Bateria?</h1>
+  <p class="meta-row">Atualizado em julho de 2026 · 7 min de leitura</p>
+
+  <p>Resposta curta: <strong>contar passos é praticamente de graça. O GPS é que consome a sua bateria.</strong> Seu iPhone já conta passos em um hardware dedicado de baixo consumo, o dia inteiro, tenha você um app de atividade física instalado ou não. Um app que simplesmente lê esse número do Apple Saúde custa quase nada para você. Já um app que mantém uma sessão de GPS aberta — um monitor de corrida, um jogo baseado em mapa, qualquer coisa observando sua localização em segundo plano — é um bicho completamente diferente, e é daí que vem o consumo que você está sentindo.</p>
+
+  <p>Então a pergunta útil não é "esse app de passos usa bateria?". É <em>"esse app usa o rádio ou só lê um número?"</em></p>
+
+  <h2>Como o iPhone realmente conta passos</h2>
+  <p>Os iPhones modernos trazem um coprocessador de movimento de baixo consumo — um pequeno bloco dedicado dentro do chip principal cuja função inteira é observar o acelerômetro e o giroscópio e transformar isso em coisas como contagem de passos, lances de escada subidos e o tipo aproximado de atividade. Ele funciona continuamente com pouquíssima energia, de forma independente da CPU principal, e continua rodando com a tela desligada e sem nenhum app aberto.</p>
+
+  <p>É por isso que existem dados de passos seus em dias nos quais você nunca abriu um app de atividade física. Abra Saúde → Explorar → Atividade → Passos e volte no tempo: você verá contagens de meses em que não estava monitorando nada. O celular estava contando o tempo todo. Nada do que você instalou criou esses dados.</p>
+
+  <p>Isso importa para a bateria pelo que implica sobre os apps. Um contador de passos construído sobre o HealthKit não está rodando um rastreador — ele está pedindo ao iOS números que já existem. O trabalho foi feito por um hardware que ia funcionar de qualquer jeito. Ler esses dados de volta está mais perto de abrir um arquivo de texto do que de gravar um vídeo.</p>
+
+  <h2>Por que o GPS é diferente</h2>
+  <p>O GPS não é um sensor que observa em silêncio. É um receptor de rádio se prendendo a sinais fracos de satélite, e manter uma posição fixa significa manter esse receptor ligado e calculando continuamente. O iOS normalmente combina isso com posicionamento por Wi-Fi e rede celular, o que acrescenta ainda mais trabalho de rádio.</p>
+
+  <p>Três coisas multiplicam esse custo:</p>
+  <ul>
+    <li><strong>A localização é contínua.</strong> Rastrear um trajeto não é uma consulta de posição só — é um fluxo de consultas durante toda a sua caminhada ou corrida.</li>
+    <li><strong>Costuma vir acompanhado de tela ligada.</strong> Apps baseados em mapa são feitos para serem olhados. A tela é um dos maiores consumidores de bateria de qualquer celular, e apps de localização convidam você a mantê-la acesa.</li>
+    <li><strong>Pode rodar em segundo plano.</strong> Apps com permissão de localização "Sempre" podem acordar e recuperar a sua posição mesmo quando você não os está usando — é essa versão que as pessoas percebem como aquele consumo misterioso durante a noite.</li>
+  </ul>
+
+  <p>Nada disso é escândalo. Um app de corrida realmente não consegue desenhar seu trajeto, separar seu ritmo por quilômetro ou medir a distância real sem isso. Um jogo baseado em localização realmente precisa saber em que parque você está. O consumo é o preço honesto de um recurso que você pediu. O problema é só quando um app cobra esse preço sem entregar nada que precisasse dele.</p>
+
+  <h2>Quais apps realmente consomem sua bateria</h2>
+  <div class="table-wrap">
+  <table>
+    <tr><th>Tipo de app</th><th>Usa GPS?</th><th>Impacto típico na bateria</th><th>Exemplos do que ele faz</th></tr>
+    <tr><td>Contadores de passos que leem o HealthKit</td><td>Não</td><td>Desprezível</td><td>Totais diários de passos, metas, sequências, jogos de caminhada que só contam passos</td></tr>
+    <tr><td>Pedômetros com contador próprio em primeiro plano</td><td>Não</td><td>Muito baixo</td><td>Leitura de passos ao vivo, atualizada enquanto o app está aberto na tela</td></tr>
+    <tr><td>Rastreadores de trajeto (corrida, ciclismo, trilha)</td><td>Sim</td><td>Alto durante a atividade</td><td>Trajetos no mapa, ritmo, elevação, distância real</td></tr>
+    <tr><td>Jogos baseados em localização</td><td>Sim</td><td>Alto, mais o custo da tela</td><td>Jogos em que sua posição física guia a partida</td></tr>
+    <tr><td>Apps com localização sempre ativa em segundo plano</td><td>Sim</td><td>O mais alto</td><td>Registro de vida, lembretes por geolocalização, compartilhamento contínuo de localização em família</td></tr>
+  </table>
+  </div>
+
+  <p>A distância entre as duas primeiras linhas e as três últimas não é uma diferença de alguns pontos percentuais. É uma diferença de natureza: um grupo está lendo números, o outro está alimentando um rádio. Se você está avaliando se instala ou não um app de passos, essa é a decisão inteira — e a maior parte dos <a href="../best-walking-games-iphone/">jogos de caminhada que valem a pena no iPhone</a> está firmemente na primeira linha.</p>
+
+  <h2>Como encontrar o verdadeiro culpado da sua bateria</h2>
+  <p>Não fique no achismo. O iOS conta para você direto.</p>
+
+  <p><strong>Ajustes → Bateria.</strong> Role para além do gráfico de carga até o detalhamento por app. Você pode alternar entre aproximadamente o último dia e aproximadamente a última semana ou dez dias — a janela mais longa é a mais útil, porque suaviza uma tarde atípica isolada. Cada app mostra uma fatia da bateria usada.</p>
+
+  <p><strong>Leia a divisão entre tela ligada e segundo plano.</strong> Toque para abrir a visão de atividade e você verá quanto tempo cada app passou ativo na tela em comparação com o tempo trabalhando em segundo plano. Essa é a parte importante. Uso alto com bastante tempo de tela é só você usando o celular — é um app social ou um jogo que você curtiu. Uso alto com bastante tempo em <em>segundo plano</em> e pouco tempo de tela é o padrão suspeito: alguma coisa está trabalhando enquanto você não está olhando.</p>
+
+  <p><strong>Ajustes → Privacidade e Segurança → Serviços de Localização.</strong> Aqui você tem a lista de todos os apps e a permissão de localização de cada um: Nunca, Perguntar da Próxima Vez, Ao Usar o App ou Sempre. Percorra a lista e pergunte, para cada app configurado como Sempre, se ele plausivelmente precisa da sua posição quando está fechado. Um app de clima checando as condições de vez em quando é razoável. Um app de compras ou um contador de passos simples, não. Qualquer app configurado como Sempre com um ícone de seta vazada ao lado usou sua localização recentemente.</p>
+
+  <p>Cruze as duas listas. O app que aparece no alto da lista de Bateria com quase todo o tempo em segundo plano <em>e</em> tem localização Sempre é o seu culpado, praticamente toda vez. Rebaixá-lo para "Ao Usar o App" costuma bastar para resolver o problema sem apagar nada.</p>
+
+  <p>Mais uma coisa que vale descartar: se o que parece errado são os seus números, e não a bateria, esse é um problema separado — veja <a href="../apple-watch-steps-not-syncing/">passos do Apple Watch não sincronizando</a>.</p>
+
+  <h2>O que procurar num contador de passos</h2>
+  <p>Uma lista curta para você conferir antes de instalar qualquer coisa:</p>
+  <ul>
+    <li><strong>Ele lê do Apple Saúde</strong> em vez de rodar o próprio monitoramento. Dado de graça vence trabalho duplicado, e isso significa que seu histórico já está lá no primeiro dia.</li>
+    <li><strong>Ele não pede localização Sempre.</strong> Se um app de passos pede localização em segundo plano, pergunte qual recurso precisa disso. Muitas vezes a resposta honesta é "publicidade".</li>
+    <li><strong>Ele oferece um widget</strong> em vez de disparar notificações o tempo todo. Um widget se atualiza de forma barata na tela de início; uma enxurrada de notificações significa que o app está sendo acordado repetidamente.</li>
+    <li><strong>Sem truques de áudio em segundo plano.</strong> Alguns apps tocam uma faixa de áudio silenciosa só para se manterem vivos em segundo plano. É um contorno bem conhecido e custa bateria de verdade para você, sem nenhum benefício.</li>
+    <li><strong>Confira a linha dele na bateria depois de uma semana.</strong> A lista em Ajustes → Bateria é o único parâmetro que importa, porque é medido no seu celular, com o seu uso.</li>
+  </ul>
+
+  <h2>Como o Pixel Islands lida com isso</h2>
+  <p>Já que a lista é nossa, é justo aplicá-la a nós mesmos. O <a href="../../">Pixel Islands</a> lê sua contagem de passos do Apple Saúde e não faz mais nada com sensores. Ele não pede nenhuma permissão de localização — não há pedido de GPS durante a configuração, porque não existe código que fosse usá-lo. Seus passos fazem uma ilha crescer por 8 estágios; para isso basta um número, não um mapa.</p>
+
+  <p>O resultado é que ele custa praticamente nada em termos de bateria e normalmente sequer aparece de forma significativa na lista de Ajustes → Bateria. Isso não é mérito de engenharia da nossa parte. É simplesmente o que acontece quando um app fica na primeira linha da tabela acima.</p>
+
+  <div class="cta-box">
+    <img src="../../../assets/appicon.png" alt="Ícone do app Pixel Islands">
+    <div class="cta-text">
+      <strong>Um contador de passos que não encosta na sua bateria</strong>
+      <span>Faça uma ilha aconchegante crescer com seus passos diários. Grátis no iPhone, com dados do Apple Saúde e sem acesso à localização.</span>
+    </div>
+    <a class="btn" href="https://apps.apple.com/app/pixel-islands-step-track-game/id6760819710">Baixe o Pixel Islands</a>
+  </div>
+
+  <h2>O lado da privacidade na mesma escolha</h2>
+  <p>Bateria não é o único motivo para preferir ficar sem GPS. Uma contagem de passos é só um número — ela diz que você caminhou, não onde. Um histórico de localização é uma categoria de informação completamente diferente.</p>
+
+  <p>Isso pesa mais para apps de caminhada do que para a maioria dos softwares, porque trajetos a pé são especialmente reveladores. Alguns dias de caminhadas registradas mostram onde você dorme, onde trabalha, quando está fora de casa e mais ou menos quem você visita. Não é um risco hipotético; é a saída padrão de qualquer app que desenhe linhas num mapa.</p>
+
+  <p>Um app que nunca pede permissão de localização não consegue acumular isso e não consegue vazar, vender ou ser obrigado a entregar o que nunca coletou. Se você gosta da ideia de um app de caminhada mas não da ideia de um registro dos seus trajetos, "sem permissão de localização" é uma garantia mais limpa do que qualquer política de privacidade.</p>
+
+  <h2>Conclusões práticas</h2>
+  <ul>
+    <li>A contagem de passos roda em um coprocessador de movimento de baixo consumo e é <strong>praticamente de graça</strong>. Apps que a leem do Apple Saúde herdam isso.</li>
+    <li>O <strong>GPS</strong> é o custo real — localizações contínuas por rádio, normalmente com a tela ligada, às vezes em segundo plano.</li>
+    <li>Encontre o seu culpado de verdade em <strong>Ajustes → Bateria</strong>, lendo a divisão entre tela ligada e segundo plano.</li>
+    <li>Revise <strong>Ajustes → Privacidade e Segurança → Serviços de Localização</strong> e rebaixe tudo que estiver como Sempre sem justificativa.</li>
+    <li>Um contador de passos que pede localização está pedindo algo de que não precisa — nem para a sua bateria, nem para a sua privacidade.</li>
+  </ul>
+</main>
+
+<footer class="site">
+  <div class="wrap cols">
+    <div>© 2026 Pixel Islands</div>
+    <div>
+      <a href="../../">Início</a>
+      <a href="../../../support/">Suporte</a>
+      <a href="../../../privacy/">Privacidade</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

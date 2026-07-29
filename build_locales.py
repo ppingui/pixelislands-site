@@ -66,6 +66,7 @@ L = {
     footer_made="© 2026 Pixel Islands · Gemacht mit 🏝️ und vielen Spaziergängen",
     foot_support="Support", foot_privacy="Datenschutz", foot_store="App Store",
     nav_guides="Guides",
+    guides_all="Alle Ratgeber ansehen →",
     guides_h2="Gehen, gut recherchiert",
     guides_p="Guides vom Pixel-Islands-Team, damit deine Schritte zählen.",
     g1t="Die 7 besten Walking-Games fürs iPhone", g1d="Gemütliche Aufbau-Spiele, Sammel-Kreaturen, Zombie-Fluchten — ehrlich verglichen.",
@@ -116,6 +117,7 @@ L = {
     footer_made="© 2026 Pixel Islands · Fait avec 🏝️ et beaucoup de marche",
     foot_support="Assistance", foot_privacy="Confidentialité", foot_store="App Store",
     nav_guides="Guides",
+    guides_all="Voir tous les guides →",
     guides_h2="La marche, étudiée",
     guides_p="Les guides de l'équipe Pixel Islands pour des pas qui comptent.",
     g1t="Les 7 meilleurs jeux de marche sur iPhone", g1d="Builders cosy, collection de créatures, évasions zombies — comparés honnêtement.",
@@ -166,6 +168,7 @@ L = {
     footer_made="© 2026 Pixel Islands · Hecho con 🏝️ y muchos paseos",
     foot_support="Soporte", foot_privacy="Privacidad", foot_store="App Store",
     nav_guides="Guías",
+    guides_all="Ver todas las guías →",
     guides_h2="Caminar, investigado",
     guides_p="Guías del equipo de Pixel Islands para que tus pasos cuenten.",
     g1t="Los 7 mejores juegos de caminar para iPhone", g1d="Builders acogedores, colección de criaturas, huidas zombis — comparados con honestidad.",
@@ -216,6 +219,7 @@ L = {
     footer_made="© 2026 Pixel Islands · 🏝️とたくさんの散歩から生まれました",
     foot_support="サポート", foot_privacy="プライバシー", foot_store="App Store",
     nav_guides="ガイド",
+    guides_all="すべてのガイドを見る →",
     guides_h2="歩くことを、調べてみた",
     guides_p="歩数を意味あるものにする、Pixel Islandsチームのガイド。",
     g1t="iPhone向けウォーキングゲーム ベスト7", g1d="ゆったり系からクリーチャー収集、ゾンビ脱出まで。正直に比較。",
@@ -266,6 +270,7 @@ L = {
     footer_made="© 2026 Pixel Islands · Feito com 🏝️ e muitas caminhadas",
     foot_support="Suporte", foot_privacy="Privacidade", foot_store="App Store",
     nav_guides="Guias",
+    guides_all="Ver todos os guias →",
     guides_h2="Caminhar, pesquisado",
     guides_p="Guias do time do Pixel Islands para fazer seus passos valerem.",
     g1t="Os 7 melhores jogos de caminhada para iPhone", g1d="Builders aconchegantes, coleção de criaturas, fugas de zumbis — comparados com honestidade.",
@@ -316,6 +321,7 @@ L = {
     footer_made="© 2026 Pixel Islands · Сделано с 🏝️ и множеством прогулок",
     foot_support="Поддержка", foot_privacy="Конфиденциальность", foot_store="App Store",
     nav_guides="Гайды",
+    guides_all="Все гайды →",
     guides_h2="Ходьба: разбор по фактам",
     guides_p="Гайды команды Pixel Islands о том, как заставить шаги работать.",
     g1t="7 лучших игр-шагомеров для iPhone", g1d="Уютные строилки, коллекции существ, побеги от зомби — честное сравнение.",
@@ -366,6 +372,7 @@ L = {
     footer_made="© 2026 Pixel Islands · Зроблено з 🏝️ та безліччю прогулянок",
     foot_support="Підтримка", foot_privacy="Конфіденційність", foot_store="App Store",
     nav_guides="Гайди",
+    guides_all="Усі гайди →",
     guides_h2="Ходьба: розбір по фактах",
     guides_p="Гайди команди Pixel Islands про те, як змусити кроки працювати.",
     g1t="7 найкращих ігор-крокомірів для iPhone", g1d="Затишні будувалки, колекції істот, втечі від зомбі — чесне порівняння.",
@@ -537,6 +544,7 @@ TEMPLATE = '''<!DOCTYPE html>
         <a href="guides/how-to-make-walking-fun/">%%G2T%%<small>%%G2D%%</small></a>
         <a href="guides/how-many-steps-a-day/">%%G3T%%<small>%%G3D%%</small></a>
       </div>
+      <div class="see-all"><a href="guides/">%%GUIDES_ALL%%</a></div>
     </div>
   </section>
 
@@ -660,7 +668,7 @@ def build(locale_dir, t):
         "%%NAV_GUIDES%%": t["nav_guides"],
         "%%GUIDES_H2%%": t["guides_h2"], "%%GUIDES_P%%": t["guides_p"],
         "%%G1T%%": t["g1t"], "%%G1D%%": t["g1d"], "%%G2T%%": t["g2t"], "%%G2D%%": t["g2d"],
-        "%%G3T%%": t["g3t"], "%%G3D%%": t["g3d"],
+        "%%G3T%%": t["g3t"], "%%G3D%%": t["g3d"], "%%GUIDES_ALL%%": t["guides_all"],
         "%%THEMES_H2%%": t["themes_h2"], "%%THEMES_P%%": t["themes_p"],
         "%%TN1%%": t["theme_names"][0], "%%TN2%%": t["theme_names"][1],
         "%%TN3%%": t["theme_names"][2], "%%TN4%%": t["theme_names"][3],

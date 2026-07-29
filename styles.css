@@ -161,3 +161,6 @@ footer.site a:hover { text-decoration: underline; }
 @media (max-width: 760px) { .guide-cards { grid-template-columns: 1fr; } }
 .guide-cards a { background: var(--card); border-radius: var(--radius); padding: 22px; box-shadow: var(--shadow); text-decoration: none; color: var(--ink); font-weight: 800; }
 .guide-cards a small { display: block; margin-top: 8px; color: var(--ink-soft); font-weight: 600; }
+.see-all { text-align: center; margin-top: 26px; }
+.see-all a { color: var(--accent-dark); font-weight: 800; text-decoration: none; }
+.see-all a:hover { text-decoration: underline; }

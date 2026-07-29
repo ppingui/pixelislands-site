@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Do Step Counter Apps Drain Your Battery? GPS vs Motion Sensors</title>
+<meta name="description" content="Do step counter apps drain your battery? Counting steps on iPhone is nearly free — GPS is the real cost. How to find the app actually eating your battery.">
+<link rel="canonical" href="https://pixelislands.app/guides/step-counter-battery-gps/">
+<link rel="alternate" hreflang="en" href="https://pixelislands.app/guides/step-counter-battery-gps/">
+<link rel="alternate" hreflang="de" href="https://pixelislands.app/de/guides/step-counter-battery-gps/">
+<link rel="alternate" hreflang="fr" href="https://pixelislands.app/fr/guides/step-counter-battery-gps/">
+<link rel="alternate" hreflang="es" href="https://pixelislands.app/es/guides/step-counter-battery-gps/">
+<link rel="alternate" hreflang="ja" href="https://pixelislands.app/ja/guides/step-counter-battery-gps/">
+<link rel="alternate" hreflang="pt-BR" href="https://pixelislands.app/pt-br/guides/step-counter-battery-gps/">
+<link rel="alternate" hreflang="ru" href="https://pixelislands.app/ru/guides/step-counter-battery-gps/">
+<link rel="alternate" hreflang="uk" href="https://pixelislands.app/uk/guides/step-counter-battery-gps/">
+<link rel="alternate" hreflang="x-default" href="https://pixelislands.app/guides/step-counter-battery-gps/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Do Step Counter Apps Drain Your Battery?">
+<meta property="og:description" content="Step counting is essentially free on iPhone. GPS is what drains the battery. Here's how to tell the difference.">
+<meta property="og:url" content="https://pixelislands.app/guides/step-counter-battery-gps/">
+<meta property="og:image" content="https://pixelislands.app/assets/hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="../../assets/appicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Do Step Counter Apps Drain Your Battery? GPS vs Motion Sensors Explained",
+  "description": "Why step counting costs almost no battery on iPhone, why GPS does, and how to find the app actually draining yours.",
+  "image": "https://pixelislands.app/assets/hero.jpg",
+  "datePublished": "2026-07-29",
+  "dateModified": "2026-07-29",
+  "author": { "@type": "Organization", "name": "Pixel Islands", "url": "https://pixelislands.app/" },
+  "publisher": { "@type": "Organization", "name": "Pixel Islands", "logo": { "@type": "ImageObject", "url": "https://pixelislands.app/assets/appicon.png" } },
+  "mainEntityOfPage": "https://pixelislands.app/guides/step-counter-battery-gps/",
+  "inLanguage": "en"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do step counters need GPS?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Steps are counted by the iPhone's low-power motion coprocessor using the accelerometer, not by satellite positioning. GPS is only needed if an app wants to draw your route on a map or measure distance along real roads. A step counter that only reports how many steps you took has no reason to ask for location at all." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the Health app drain battery?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Essentially no. The Health app is a store of data your iPhone is already collecting. The motion coprocessor counts steps continuously whether or not the Health app is open, so reading that data back costs almost nothing. Apps that read step counts from Apple Health inherit the same negligible cost." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does my iPhone have step data for days I never opened a fitness app?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Because step counting is done in hardware, not by an app. The low-power motion coprocessor tracks movement all the time and writes it to Health in the background. Fitness apps do not create that data — they just read it, which is why your step history goes back further than any app you installed." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I find which app is draining my iPhone battery?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Open Settings, then Battery, and scroll to the per-app usage list. Switch between the last 24 hours and the last 10 days, and look at the Screen On versus Background split under each app. Then check Settings, Privacy & Security, Location Services to see which apps have Always permission — an app with high background time and Always location is usually the culprit." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is a step tracker without GPS better for privacy?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. A step count is just a number — it says you walked, not where. A GPS route is far more revealing: a few days of tracked walks will show where you live, where you work, and when you are away from home. An app that never requests location permission cannot build that history in the first place." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="../../">
+      <img src="../../assets/appicon.png" alt="Pixel Islands app icon" width="36" height="36">
+      Pixel Islands
+    </a>
+    <nav>
+      <a href="../../#features">Features</a>
+      <a href="../">Guides</a>
+      <a href="../../support/">Support</a>
+      <a class="cta-mini" href="https://apps.apple.com/app/pixel-islands-step-track-game/id6760819710">Download</a>
+    </nav>
+  </div>
+</header>
+
+<main class="doc article">
+  <h1>Do Step Counter Apps Drain Your Battery?</h1>
+  <p class="meta-row">Updated July 2026 · 7 min read</p>
+
+  <p>Short answer: <strong>counting steps is essentially free. GPS is what drains your battery.</strong> Your iPhone already counts steps in dedicated low-power hardware, all day, whether or not you have a fitness app installed. An app that simply reads that number out of Apple Health costs you almost nothing. An app that keeps a GPS session open — a running tracker, a map-based game, anything watching your location in the background — is a completely different animal, and that's where the drain you're feeling actually comes from.</p>
+
+  <p>So the useful question isn't "does this step app use battery." It's <em>"does this app use the radio, or just read a number?"</em></p>
+
+  <h2>How iPhone actually counts steps</h2>
+  <p>Modern iPhones include a low-power motion coprocessor — a small dedicated block inside the main chip whose whole job is to watch the accelerometer and gyroscope and turn that into things like step counts, flights climbed, and rough activity type. It runs continuously at very low power, independently of the main CPU, and it keeps running when the screen is off and no app is in the foreground.</p>
+
+  <p>That's why your step data exists for days you never opened a fitness app. Open Health → Browse → Activity → Steps and scroll back: you'll see counts for months you weren't tracking anything. The phone was counting the whole time. Nothing you installed created that data.</p>
+
+  <p>This matters for battery because of what it implies about apps. A step counter built on HealthKit isn't running a tracker — it's asking iOS for numbers that already exist. The work was done by hardware that was going to run anyway. Reading it back is closer to opening a text file than to recording a video.</p>
+
+  <h2>Why GPS is different</h2>
+  <p>GPS is not a sensor that quietly observes. It's a radio receiver locking onto faint satellite signals, and holding a position fix means keeping that receiver powered and computing continuously. iOS usually blends it with Wi-Fi and cellular positioning, which adds more radio work on top.</p>
+
+  <p>Three things compound the cost:</p>
+  <ul>
+    <li><strong>The fix is continuous.</strong> Route tracking isn't one location lookup — it's a stream of them for the entire length of your walk or run.</li>
+    <li><strong>It usually comes with screen time.</strong> Map-based apps get looked at. The display is one of the largest battery consumers on any phone, and location apps invite you to keep it on.</li>
+    <li><strong>It can run in the background.</strong> Apps granted "Always" location can wake up and re-acquire your position when you're not using them at all, which is the version people notice as mystery overnight drain.</li>
+  </ul>
+
+  <p>None of that is a scandal. A running app genuinely cannot draw your route, split your pace per kilometre, or measure real distance without it. A location-based game genuinely needs to know which park you're standing in. The drain is the honest price of a feature you asked for. The problem is only when an app charges you that price without delivering anything that needed it.</p>
+
+  <h2>Which apps actually drain your battery</h2>
+  <div class="table-wrap">
+  <table>
+    <tr><th>App type</th><th>Uses GPS?</th><th>Typical battery impact</th><th>Examples of what it's for</th></tr>
+    <tr><td>Step counters reading HealthKit</td><td>No</td><td>Negligible</td><td>Daily step totals, goals, streaks, walking games that count steps only</td></tr>
+    <tr><td>Pedometers running their own foreground counter</td><td>No</td><td>Very low</td><td>Live step readouts that update while the app is open on screen</td></tr>
+    <tr><td>Route trackers (running, cycling, hiking)</td><td>Yes</td><td>High during activity</td><td>Mapped routes, pace, elevation, real-world distance</td></tr>
+    <tr><td>Location-based games</td><td>Yes</td><td>High, plus screen cost</td><td>Games where your physical position drives play</td></tr>
+    <tr><td>Always-on background location apps</td><td>Yes</td><td>Highest</td><td>Life-logging, geofenced reminders, continuous family location sharing</td></tr>
+  </table>
+  </div>
+
+  <p>The gap between the top two rows and the bottom three is not a small percentage difference. It's a difference in kind: one group is reading numbers, the other is powering a radio. If you're weighing up whether to install a step app at all, that's the whole decision — and most of the <a href="../best-walking-games-iphone/">walking games worth installing on iPhone</a> sit firmly in the first row.</p>
+
+  <h2>How to find your real battery culprit</h2>
+  <p>Don't guess. iOS will tell you directly.</p>
+
+  <p><strong>Settings → Battery.</strong> Scroll past the charge graph to the per-app breakdown. You can switch between roughly the last day and roughly the last week or ten days — the longer window is the more useful one, because it smooths out a single unusual afternoon. Each app shows a share of battery used.</p>
+
+  <p><strong>Read the Screen On / Background split.</strong> Tap into the activity view and you'll see how much time each app spent active on screen versus working in the background. This is the important part. High usage with lots of screen time is just you using your phone — that's a social app or a game you enjoyed. High usage with lots of <em>background</em> time and little screen time is the suspicious pattern: something is working while you aren't looking at it.</p>
+
+  <p><strong>Settings → Privacy &amp; Security → Location Services.</strong> Here you get a list of every app and its location permission: Never, Ask Next Time, While Using, or Always. Work down it and ask, for each app set to Always, whether it plausibly needs your position when it's closed. A weather app checking conditions occasionally is reasonable. A shopping app or a simple step counter is not. Anything set to Always with a hollow arrow icon next to it has used your location recently.</p>
+
+  <p>Cross-reference the two lists. The app that appears high in Battery with mostly background time <em>and</em> has Always location is your culprit, essentially every time. Downgrading it to "While Using" is usually enough to fix the problem without deleting anything.</p>
+
+  <p>One more thing worth ruling out: if your numbers look wrong rather than your battery, that's a separate issue — see <a href="../apple-watch-steps-not-syncing/">Apple Watch steps not syncing</a> for that.</p>
+
+  <h2>What to look for in a step tracker</h2>
+  <p>A short checklist you can run before installing anything:</p>
+  <ul>
+    <li><strong>It reads from Apple Health</strong> rather than running its own tracking. Free data beats duplicated work, and it means your history is already there on day one.</li>
+    <li><strong>It doesn't ask for Always location.</strong> If a step app requests background location, ask what feature needs it. Often the honest answer is "advertising."</li>
+    <li><strong>It offers a widget</strong> instead of pushing constant notifications. A widget updates cheaply on the home screen; a notification stream means the app is being woken repeatedly.</li>
+    <li><strong>No background audio tricks.</strong> Some apps play a silent audio track purely to keep themselves alive in the background. It's a well-known workaround and it costs you real battery for nothing.</li>
+    <li><strong>Check its own battery line after a week.</strong> The Settings → Battery list is the only benchmark that matters, because it's measured on your phone, with your usage.</li>
+  </ul>
+
+  <h2>How Pixel Islands handles this</h2>
+  <p>Since this is our checklist, it's fair to hold ourselves to it. <a href="../../">Pixel Islands</a> reads your step count from Apple Health and does nothing else with sensors. It requests no location permission at all — there's no GPS prompt during setup, because there's no code that would use one. Your steps grow an island through 8 stages; that needs a number, not a map.</p>
+
+  <p>The result is that it costs essentially nothing in battery terms, and it usually doesn't appear meaningfully in the Settings → Battery list at all. That isn't clever engineering on our part. It's just what happens when an app stays in the first row of the table above.</p>
+
+  <div class="cta-box">
+    <img src="../../assets/appicon.png" alt="Pixel Islands app icon">
+    <div class="cta-text">
+      <strong>A step tracker that doesn't touch your battery</strong>
+      <span>Grow a cozy island from your daily steps. Free on iPhone, powered by Apple Health, no location access.</span>
+    </div>
+    <a class="btn" href="https://apps.apple.com/app/pixel-islands-step-track-game/id6760819710">Get Pixel Islands</a>
+  </div>
+
+  <h2>The privacy side of the same choice</h2>
+  <p>Battery isn't the only reason to prefer no GPS. A step count is just a number — it says you walked, not where. A location history is a different category of information entirely.</p>
+
+  <p>This matters more for walking apps than for most software, because walking routes are unusually revealing. A few days of tracked walks will show where you sleep, where you work, when you're away from home, and roughly who you visit. That's not a hypothetical risk profile; it's the standard output of any app drawing lines on a map.</p>
+
+  <p>An app that never requests location permission can't accumulate that, and can't leak, sell, or be compelled to hand over what it never collected. If you like the idea of a walking app but not the idea of a walking log, "no location permission" is a cleaner guarantee than any privacy policy.</p>
+
+  <h2>Practical takeaways</h2>
+  <ul>
+    <li>Step counting runs on a low-power motion coprocessor and is <strong>essentially free</strong>. Apps reading it from Apple Health inherit that.</li>
+    <li><strong>GPS</strong> is the real cost — continuous radio fixes, usually with the screen on, sometimes in the background.</li>
+    <li>Find your actual culprit in <strong>Settings → Battery</strong>, reading the Screen On versus Background split.</li>
+    <li>Audit <strong>Settings → Privacy &amp; Security → Location Services</strong> and demote anything unjustifiably set to Always.</li>
+    <li>A step tracker asking for location is asking for something it doesn't need — for your battery or your privacy.</li>
+  </ul>
+</main>
+
+<footer class="site">
+  <div class="wrap cols">
+    <div>© 2026 Pixel Islands</div>
+    <div>
+      <a href="../../">Home</a>
+      <a href="../../support/">Support</a>
+      <a href="../../privacy/">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
