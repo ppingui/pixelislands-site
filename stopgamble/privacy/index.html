@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>StopGamble — Privacy Policy</title>
-<meta name="description" content="StopGamble privacy policy: no accounts, no servers, no tracking. Your recovery is nobody's dataset.">
+<meta name="description" content="StopGamble privacy policy: no accounts, no servers, no tracking. GDPR and UK GDPR notice.">
 <meta name="robots" content="index, follow">
 <style>
   :root {
@@ -26,23 +26,32 @@
   }
   main { max-width: 44rem; margin: 0 auto; }
   h1 { font-size: 2rem; line-height: 1.2; margin: 0 0 .35rem; letter-spacing: -.02em; }
-  .updated { color: var(--muted); font-size: .9rem; margin: 0 0 2.25rem; }
+  .updated { color: var(--muted); font-size: .9rem; margin: 0 0 2rem; }
   h2 {
     font-size: 1.2rem; margin: 2.75rem 0 .75rem; letter-spacing: -.01em;
     padding-top: 1.5rem; border-top: 1px solid var(--rule);
   }
-  h2:first-of-type { border-top: 0; padding-top: 0; }
-  p, li { color: var(--fg); }
+  h3 { font-size: 1.02rem; margin: 1.6rem 0 .4rem; }
   ul { padding-left: 1.15rem; }
   li { margin: .4rem 0; }
   a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
   strong { font-weight: 650; }
   .lede {
     background: var(--card); border: 1px solid var(--rule); border-radius: 14px;
-    padding: 1.1rem 1.25rem; margin: 0 0 2rem;
+    padding: 1.1rem 1.25rem; margin: 0 0 1.5rem;
   }
   .lede p { margin: 0; }
   .lede p + p { margin-top: .7rem; }
+  .controller {
+    background: var(--card); border: 1px solid var(--rule); border-radius: 12px;
+    padding: 1rem 1.15rem; margin: 1rem 0; list-style: none; padding-left: 1.15rem;
+  }
+  .controller li { margin: .3rem 0; }
+  .table-wrap { overflow-x: auto; margin: 1rem 0; }
+  table { border-collapse: collapse; width: 100%; min-width: 34rem; font-size: .95rem; }
+  th, td { text-align: left; vertical-align: top; padding: .65rem .7rem; border-bottom: 1px solid var(--rule); }
+  th { font-weight: 650; color: var(--muted); font-size: .85rem; text-transform: uppercase; letter-spacing: .04em; }
+  .verified { color: var(--muted); font-size: .92rem; font-style: italic; }
   footer {
     margin-top: 3.5rem; padding-top: 1.5rem; border-top: 1px solid var(--rule);
     color: var(--muted); font-size: .9rem;
@@ -60,9 +69,12 @@
     in this app. This page explains exactly what that means — including the few places
     where data does leave your phone, because a privacy policy that only lists the
     reassuring parts is not a privacy policy.</p>
+    <p>This notice is written to meet the EU General Data Protection Regulation (GDPR)
+    and the UK GDPR. If you are in the EEA or the UK, the sections on legal bases,
+    transfers and your rights apply to you in full.</p>
   </div>
 
-  <h2>What you enter stays on your device</h2>
+  <h2>1. What you enter stays on your device</h2>
   <p>Everything you record — quiz answers, check-ins, journal reflections, program
   answers, urge logs, lapse entries, streak dates, money figures, your signature and
   your orb collection — is stored in two places, both of which belong to you:</p>
@@ -72,85 +84,190 @@
     so your history survives a lost or replaced device.</li>
   </ul>
   <p>Your private iCloud database is accessible only to your Apple ID. We are not a
-  party to it and cannot read it. If iCloud is unavailable or disabled, the app falls
-  back to storing data only on your device.</p>
+  party to it and cannot read it. If iCloud is unavailable or disabled, the app stores
+  data only on your device.</p>
+  <p><strong>We never receive this content.</strong> There is no API call that sends
+  it, no backup on our side, and no key that would let us decrypt it. Because we have
+  no access to it and no ability to use it, we do not consider ourselves the controller
+  of what you write in the app — you are. We describe it here for transparency, not
+  because we process it.</p>
 
-  <h2>We collect nothing about you</h2>
+  <h2>2. What actually reaches anyone else</h2>
+  <p>Four narrow cases, all optional or technically unavoidable.</p>
+
+  <h3>Purchases — Apple, and RevenueCat</h3>
+  <p>Subscriptions are processed by Apple. We use RevenueCat to verify and manage
+  subscription status. It acts as our processor and receives:</p>
   <ul>
-    <li>No account, no sign-up, no email address, no phone number.</li>
-    <li>No advertising identifiers, no device fingerprinting, no cross-app tracking.</li>
-    <li>No third-party analytics SDKs.</li>
-    <li>We never sell, share, rent or monetise your data — there is nothing on our
-    side to sell.</li>
+    <li>device type and operating system,</li>
+    <li>last-seen time, and Apple receipt files,</li>
+    <li>optionally, a user identifier and attribution metadata.</li>
   </ul>
-
-  <h2>Usage counts, measured on your device only</h2>
-  <p>The app keeps a small first-party tally of <em>how the app is used</em> — for
-  example how many times a screen was opened on a given day. It is stored as counts
-  by day in a single file in the app's own storage, contains no identifiers and no
-  content from anything you wrote, and <strong>is never transmitted anywhere</strong>.
-  It exists so the app can be improved without watching you. Deleting the app deletes it.</p>
-
-  <h2>Where data does leave your phone</h2>
-  <p>Four narrow cases, all optional or unavoidable:</p>
-  <p><strong>Purchases (Apple, and RevenueCat).</strong> Subscriptions are processed by
-  Apple. We use RevenueCat to verify and manage subscription status; it receives
-  purchase and receipt information associated with a random identifier it generates.
-  It never receives your journal, answers, streak or any recovery content. See
+  <p>It never receives your journal, answers, streak or any recovery content. See
   <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a> and
   <a href="https://www.revenuecat.com/privacy/">RevenueCat's privacy policy</a>.</p>
-  <p><strong>The DNS shield, if you turn it on.</strong> This installs an
-  encrypted-DNS (DoH) configuration so gambling domains fail to resolve across your
-  apps and browsers. When it is on, your device's DNS lookups are answered by
-  <a href="https://mullvad.net/en/help/dns-over-https-and-dns-over-tls">Mullvad's public resolver</a>,
+
+  <h3>The DNS shield — only if you turn it on</h3>
+  <p>This installs an encrypted-DNS (DoH) configuration so gambling domains fail to
+  resolve across your apps and browsers. While it is on, your device's DNS lookups are
+  answered by <a href="https://mullvad.net/en/help/dns-over-https-and-dns-over-tls">Mullvad's public resolver</a>
   under their <a href="https://mullvad.net/en/help/no-logging-data-policy/">no-logging policy</a>.
-  Advanced users may point it at their own NextDNS configuration instead, in which
-  case NextDNS answers those lookups under their own policy. We are not in that path
-  and never see your browsing. Turning the shield off in iOS Settings ends this
-  immediately.</p>
-  <p><strong>Blocklist updates.</strong> The app periodically downloads public
-  gambling-domain lists from jsDelivr and GitHub. As with any file download, those
-  servers can see the request and your IP address. The request carries no personal
-  data, no identifier, and nothing about you or your recovery.</p>
-  <p><strong>Nothing else.</strong> The app makes no other network requests.</p>
+  Advanced users may point it at their own NextDNS configuration instead. Mullvad or
+  NextDNS act as independent controllers for those lookups under their own policies —
+  we are not in that path and never see your browsing. Turning the shield off in iOS
+  Settings ends this immediately.</p>
 
-  <h2>Notifications</h2>
-  <p>All reminders — the morning program nudge, milestone notes, trial reminders — are
-  scheduled locally by your device. They are not sent from a server and no push
-  service receives your data. If you told us during setup that you keep your gambling
-  private, discreet mode is enabled automatically and lock-screen wording stays neutral.</p>
+  <h3>Blocklist updates</h3>
+  <p>The app periodically downloads public gambling-domain lists from jsDelivr and
+  GitHub. As with any file download, those servers can see the request and your IP
+  address. The request carries no identifier and nothing about you or your recovery.</p>
 
-  <h2>Sensitive information</h2>
-  <p>What you record here concerns your health and finances, and we treat it that way.
-  That is the reason for the design: no accounts to breach, no servers to subpoena, no
-  analytics vendor holding a copy. The strongest protection we can offer is not holding
-  your data at all.</p>
+  <h3>Usage counts — which reach no one</h3>
+  <p>The app keeps a first-party tally of <em>how the app is used</em> (for example,
+  how many times a screen was opened on a given day), stored as counts by day in a
+  single file in the app's own storage. It contains no identifiers and no content you
+  wrote, and <strong>is never transmitted anywhere</strong>. Deleting the app deletes it.</p>
 
-  <h2>Your control</h2>
+  <p><strong>Nothing else.</strong> The app makes no other network requests. There are
+  no advertising identifiers, no third-party analytics SDKs, no cross-app tracking, and
+  no profiling or automated decision-making that produces legal or similarly
+  significant effects.</p>
+
+  <h2>3. Legal bases (GDPR Art. 6 and Art. 9)</h2>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>What</th><th>Purpose</th><th>Legal basis</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>Purchase &amp; subscription status (via Apple / RevenueCat)</td>
+        <td>Provide and restore the subscription you bought; prevent fraudulent entitlement</td>
+        <td><strong>Art. 6(1)(b)</strong> — performance of a contract with you</td>
+      </tr>
+      <tr>
+        <td>IP address visible to the blocklist CDN when the app downloads a list</td>
+        <td>Deliver the blocking feature the app exists to provide</td>
+        <td><strong>Art. 6(1)(f)</strong> — legitimate interests (keeping protection lists current). Our assessment: minimal data, no profiling, no linkage to you</td>
+      </tr>
+      <tr>
+        <td>DNS lookups, while the shield is enabled</td>
+        <td>Block gambling domains device-wide</td>
+        <td><strong>Art. 6(1)(a)</strong> — your consent, given by enabling the shield and approving the iOS dialog; withdrawable at any time by turning it off</td>
+      </tr>
+      <tr>
+        <td>What you write in the app</td>
+        <td>Deliver the recovery programme to you on your own device</td>
+        <td>We do not receive it, so we carry out no processing to justify. To the extent it is processed at all, it is on your device under your control</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <p><strong>Special-category (health) data.</strong> What you record here reveals
+  information about health and about a possible behavioural addiction, which is
+  special-category data under <strong>Art. 9</strong>. That is exactly why the app is
+  designed the way it is: that data never reaches us, so we never rely on an Art. 9
+  condition for it. Nothing in §2 reaching a third party is special-category data — a
+  subscription receipt does not reveal a health condition beyond the fact that you
+  bought an app.</p>
+
+  <h2>4. International transfers</h2>
+  <p><strong>RevenueCat</strong> is a US company (Brandon, Florida) storing data on
+  Amazon Web Services in the United States. Transfers are covered by its data
+  processing agreement, which incorporates the European Commission's <strong>Standard
+  Contractual Clauses</strong> (Implementing Decision (EU) 2021/914),
+  <strong>Module Two — controller to processor</strong>. For the UK it additionally
+  applies the ICO's <strong>International Data Transfer Addendum</strong> of 21 March
+  2022, and for Switzerland the SCCs adapted to the Swiss FADP. RevenueCat is
+  <strong>not</strong> certified under the EU–US Data Privacy Framework; the SCCs are
+  the mechanism.</p>
+  <p class="verified">Verified against RevenueCat's published DPA on 6 August 2026.</p>
+  <p><strong>Apple</strong> — see Apple's privacy policy for its own transfer
+  safeguards. Your private iCloud data is governed by Apple's terms and is not
+  transferred by us, because we never hold it.</p>
+  <p><strong>Us.</strong> We are established in Ukraine, which is outside the EEA and
+  has no European Commission adequacy decision. Where you give data to us directly,
+  that is a direct collection rather than a Chapter V transfer (per EDPB Guidelines
+  05/2021 on the interplay of Art. 3 and Chapter V). In practice there is almost
+  nothing to collect: there is no account, and the only personal data we can see is the
+  pseudonymous subscription record in RevenueCat's dashboard.</p>
+
+  <h2>5. How long anything is kept</h2>
   <ul>
-    <li><strong>See everything</strong>: it is all in the app — journal, timeline,
-    collection, stats.</li>
-    <li><strong>Delete everything</strong>: delete the app from your iPhone. To also
-    remove the iCloud copy, go to Settings → your name → iCloud → Manage Account
-    Storage → StopGamble.</li>
-    <li><strong>Cancel a subscription</strong>: Settings → your name → Subscriptions,
-    or the Manage Subscription link in the app.</li>
+    <li><strong>On your device and in your private iCloud:</strong> until you delete
+    it. We cannot delete it for you, and we cannot stop you deleting it.</li>
+    <li><strong>On our systems:</strong> nothing, because we operate none.</li>
+    <li><strong>Purchase records:</strong> retained by Apple and RevenueCat under their
+    own retention schedules, and as required by tax and accounting law.</li>
+    <li><strong>Usage counts:</strong> on your device only, removed when the app is
+    deleted.</li>
   </ul>
-  <p>There is no "request your data" form, because there is no copy of your data on
-  our side to send you.</p>
 
-  <h2>Children</h2>
+  <h2>6. Who is responsible</h2>
+  <ul class="controller">
+    <li><strong>Controller:</strong> Kyrylo Lozovyi</li>
+    <li><strong>Address:</strong> Vidpochinku 12, Kyiv, Ukraine</li>
+    <li><strong>Privacy contact:</strong>
+      <a href="mailto:stopgamblesupport@gmail.com">stopgamblesupport@gmail.com</a></li>
+  </ul>
+  <p>We have not appointed a Data Protection Officer; we are not required to, because
+  we carry out no large-scale monitoring and hold no special-category data on our
+  systems (see §3).</p>
+
+  <h2>7. Your rights</h2>
+  <p>If you are in the EEA or UK you have the right to <strong>access</strong> your
+  data, to <strong>rectification</strong>, to <strong>erasure</strong>, to
+  <strong>restriction</strong> of processing, to <strong>data portability</strong>, to
+  <strong>object</strong> to processing based on legitimate interests, and to
+  <strong>withdraw consent</strong> at any time where consent is the basis (the DNS
+  shield — withdraw by turning it off; this does not affect processing already carried
+  out).</p>
+  <p><strong>An honest limitation.</strong> For almost everything this app touches, we
+  hold no identifiable data about you and no account that could link a request to a
+  person. Under <strong>GDPR Art. 11</strong> we are not required to obtain extra
+  information purely to identify you, and we will not ask you for identity documents to
+  service a request we have no data to answer. In practice:</p>
+  <ul>
+    <li><strong>Content you wrote</strong> — exercise these rights directly: it is on
+    your device and in your iCloud, and deleting the app (plus the iCloud copy) erases
+    it completely.</li>
+    <li><strong>Purchase data</strong> — contact Apple, or contact us and we will pass
+    the request to RevenueCat, which acts as our processor.</li>
+  </ul>
+  <p>Write to <a href="mailto:stopgamblesupport@gmail.com">stopgamblesupport@gmail.com</a>
+  and we will respond within one month, as required by Art. 12(3).</p>
+  <p><strong>Right to complain.</strong> You may lodge a complaint with your national
+  data protection authority. The list is at
+  <a href="https://edpb.europa.eu/about-edpb/board/members_en">edpb.europa.eu</a>; in
+  the UK it is the <a href="https://ico.org.uk/make-a-complaint/">ICO</a>. You do not
+  have to contact us first, though we would rather you did.</p>
+
+  <h2>8. Deleting everything</h2>
+  <ul>
+    <li>Delete the app from your iPhone.</li>
+    <li>Remove the iCloud copy: Settings → your name → iCloud → Manage Account Storage
+    → StopGamble.</li>
+    <li>Cancel a subscription: Settings → your name → Subscriptions, or the Manage
+    Subscription link in the app.</li>
+  </ul>
+
+  <h2>9. Sensitive information, and why the design is the policy</h2>
+  <p>What you record here concerns your health and your finances, and we treat it that
+  way. No accounts to breach, no servers to subpoena, no analytics vendor holding a
+  copy. The strongest protection we can offer is not holding your data at all — and
+  that is a structural decision, not a promise we could quietly reverse.</p>
+
+  <h2>10. Children</h2>
   <p>StopGamble is intended for adults and is not directed at children. We do not
-  knowingly collect information from anyone under 18.</p>
+  knowingly collect information from anyone under 18. The App Store listing is rated
+  accordingly.</p>
 
-  <h2>Changes</h2>
+  <h2>11. Changes</h2>
   <p>If this policy changes, the date at the top changes and the current version is
-  always published at this address. Material changes will be noted in the app.</p>
+  always published at this address. Material changes will be surfaced in the app.</p>
 
-  <h2>Contact</h2>
-  <p>Questions about privacy: <a href="mailto:support@pixelislands.app">support@pixelislands.app</a></p>
+  <h2>12. Contact</h2>
+  <p><a href="mailto:stopgamblesupport@gmail.com">stopgamblesupport@gmail.com</a></p>
 
-  <footer>StopGamble · Pixel Islands</footer>
+  <footer>StopGamble · Kyrylo Lozovyi</footer>
 </main>
 </body>
 </html>
