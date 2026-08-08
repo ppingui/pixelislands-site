@@ -426,6 +426,7 @@ TEMPLATE = '''<!DOCTYPE html>
 <link rel="stylesheet" href="../styles.css">
 <script type="application/ld+json">%%APP_JSONLD%%</script>
 <script type="application/ld+json">%%FAQ_JSONLD%%</script>
+<script type="application/ld+json">%%ENTITY_JSONLD%%</script>
 </head>
 <body>
 
@@ -620,6 +621,18 @@ def langrow(current_path):
     return " · ".join(parts)
 
 
+def entity_jsonld(lang, home):
+    import json
+    return json.dumps({"@context":"https://schema.org","@graph":[
+        {"@type":"Organization","@id":f"{SITE}/#org","name":"Pixel Islands","url":f"{SITE}/",
+         "logo":{"@type":"ImageObject","url":f"{SITE}/assets/appicon.png","width":512,"height":512},
+         "founder":{"@type":"Person","name":"Kyrylo Lozovyi"},
+         "email":"supportpixelislands@gmail.com","sameAs":["https://apps.apple.com/app/pixel-islands-step-track-game/id6760819710"]},
+        {"@type":"WebSite","@id":f"{SITE}/#website","name":"Pixel Islands","url":home,
+         "inLanguage":lang,"publisher":{"@id":f"{SITE}/#org"}}]},
+        ensure_ascii=False, indent=2)
+
+
 def build(locale_dir, t):
     path = f"/{locale_dir}/"
     canonical = SITE + path
@@ -677,6 +690,7 @@ def build(locale_dir, t):
         "%%GUIDES_H2%%": t["guides_h2"], "%%GUIDES_P%%": t["guides_p"],
         "%%G1T%%": t["g1t"], "%%G1D%%": t["g1d"], "%%G2T%%": t["g2t"], "%%G2D%%": t["g2d"],
         "%%G0T%%": t["g0t"], "%%G0D%%": t["g0d"],
+        "%%ENTITY_JSONLD%%": entity_jsonld(t["lang"], f"{SITE}/{locale_dir}/"),
         "%%G3T%%": t["g3t"], "%%G3D%%": t["g3d"], "%%GUIDES_ALL%%": t["guides_all"],
         "%%THEMES_H2%%": t["themes_h2"], "%%THEMES_P%%": t["themes_p"],
         "%%TN1%%": t["theme_names"][0], "%%TN2%%": t["theme_names"][1],
