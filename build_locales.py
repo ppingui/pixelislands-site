@@ -67,6 +67,7 @@ L = {
     foot_support="Support", foot_privacy="Datenschutz", foot_store="App Store",
     nav_guides="Guides",
     guides_all="Alle Ratgeber ansehen →",
+    g0t="Die besten Schrittzähler-Apps fürs iPhone", g0d="Widget, Abo, Genauigkeit — und wann die Health-App reicht.",
     guides_h2="Gehen, gut recherchiert",
     guides_p="Guides vom Pixel-Islands-Team, damit deine Schritte zählen.",
     g1t="Die 7 besten Walking-Games fürs iPhone", g1d="Gemütliche Aufbau-Spiele, Sammel-Kreaturen, Zombie-Fluchten — ehrlich verglichen.",
@@ -118,6 +119,7 @@ L = {
     foot_support="Assistance", foot_privacy="Confidentialité", foot_store="App Store",
     nav_guides="Guides",
     guides_all="Voir tous les guides →",
+    g0t="Meilleures applications podomètre iPhone", g0d="Widgets, abonnements, précision : le comparatif honnête.",
     guides_h2="La marche, étudiée",
     guides_p="Les guides de l'équipe Pixel Islands pour des pas qui comptent.",
     g1t="Les 7 meilleurs jeux de marche sur iPhone", g1d="Builders cosy, collection de créatures, évasions zombies — comparés honnêtement.",
@@ -169,6 +171,7 @@ L = {
     foot_support="Soporte", foot_privacy="Privacidad", foot_store="App Store",
     nav_guides="Guías",
     guides_all="Ver todas las guías →",
+    g0t="Mejores apps para contar pasos en iPhone", g0d="Y por qué el podómetro que ya llevas dentro puede bastarte.",
     guides_h2="Caminar, investigado",
     guides_p="Guías del equipo de Pixel Islands para que tus pasos cuenten.",
     g1t="Los 7 mejores juegos de caminar para iPhone", g1d="Builders acogedores, colección de criaturas, huidas zombis — comparados con honestidad.",
@@ -220,6 +223,7 @@ L = {
     foot_support="サポート", foot_privacy="プライバシー", foot_store="App Store",
     nav_guides="ガイド",
     guides_all="すべてのガイドを見る →",
+    g0t="iPhoneの歩数計アプリおすすめ", g0d="内蔵の万歩計で十分？無料アプリ5本を正直に比較",
     guides_h2="歩くことを、調べてみた",
     guides_p="歩数を意味あるものにする、Pixel Islandsチームのガイド。",
     g1t="iPhone向けウォーキングゲーム ベスト7", g1d="ゆったり系からクリーチャー収集、ゾンビ脱出まで。正直に比較。",
@@ -271,6 +275,7 @@ L = {
     foot_support="Suporte", foot_privacy="Privacidade", foot_store="App Store",
     nav_guides="Guias",
     guides_all="Ver todos os guias →",
+    g0t="Melhores apps contadores de passos", g0d="Seu iPhone já conta seus passos. Quando vale instalar um app.",
     guides_h2="Caminhar, pesquisado",
     guides_p="Guias do time do Pixel Islands para fazer seus passos valerem.",
     g1t="Os 7 melhores jogos de caminhada para iPhone", g1d="Builders aconchegantes, coleção de criaturas, fugas de zumbis — comparados com honestidade.",
@@ -322,6 +327,7 @@ L = {
     foot_support="Поддержка", foot_privacy="Конфиденциальность", foot_store="App Store",
     nav_guides="Гайды",
     guides_all="Все гайды →",
+    g0t="Лучшие шагомеры для iPhone", g0d="Встроенный счётчик, виджеты, подписки и точность — честно",
     guides_h2="Ходьба: разбор по фактам",
     guides_p="Гайды команды Pixel Islands о том, как заставить шаги работать.",
     g1t="7 лучших игр-шагомеров для iPhone", g1d="Уютные строилки, коллекции существ, побеги от зомби — честное сравнение.",
@@ -373,6 +379,7 @@ L = {
     foot_support="Підтримка", foot_privacy="Конфіденційність", foot_store="App Store",
     nav_guides="Гайди",
     guides_all="Усі гайди →",
+    g0t="Найкращі крокоміри для iPhone", g0d="Чи потрібен окремий застосунок — і який обрати у 2026-му",
     guides_h2="Ходьба: розбір по фактах",
     guides_p="Гайди команди Pixel Islands про те, як змусити кроки працювати.",
     g1t="7 найкращих ігор-крокомірів для iPhone", g1d="Затишні будувалки, колекції істот, втечі від зомбі — чесне порівняння.",
@@ -540,6 +547,7 @@ TEMPLATE = '''<!DOCTYPE html>
         <p>%%GUIDES_P%%</p>
       </div>
       <div class="guide-cards">
+        <a href="guides/best-step-tracker-apps-iphone/">%%G0T%%<small>%%G0D%%</small></a>
         <a href="guides/best-walking-games-iphone/">%%G1T%%<small>%%G1D%%</small></a>
         <a href="guides/how-to-make-walking-fun/">%%G2T%%<small>%%G2D%%</small></a>
         <a href="guides/how-many-steps-a-day/">%%G3T%%<small>%%G3D%%</small></a>
@@ -668,6 +676,7 @@ def build(locale_dir, t):
         "%%NAV_GUIDES%%": t["nav_guides"],
         "%%GUIDES_H2%%": t["guides_h2"], "%%GUIDES_P%%": t["guides_p"],
         "%%G1T%%": t["g1t"], "%%G1D%%": t["g1d"], "%%G2T%%": t["g2t"], "%%G2D%%": t["g2d"],
+        "%%G0T%%": t["g0t"], "%%G0D%%": t["g0d"],
         "%%G3T%%": t["g3t"], "%%G3D%%": t["g3d"], "%%GUIDES_ALL%%": t["guides_all"],
         "%%THEMES_H2%%": t["themes_h2"], "%%THEMES_P%%": t["themes_p"],
         "%%TN1%%": t["theme_names"][0], "%%TN2%%": t["theme_names"][1],
