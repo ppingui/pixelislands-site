@@ -458,7 +458,7 @@ TEMPLATE = '''<!DOCTYPE html>
       <div class="rating"><span class="stars">★★★★★</span> %%RATING%%</div>
     </div>
     <div class="hero-img">
-      <img src="../assets/hero.jpg" alt="%%HERO_ALT%%" width="1600" height="900" fetchpriority="high">
+      <img src="../assets/hero.webp" alt="%%HERO_ALT%%" width="1600" height="900" fetchpriority="high">
     </div>
   </div>
 
@@ -484,14 +484,14 @@ TEMPLATE = '''<!DOCTYPE html>
       </div>
       <div class="evolution">
         <div class="island-frame" id="islandFrame">
-          <img src="../assets/stage1.png" alt="1/8" class="active" width="480" height="480">
-          <img src="../assets/stage2.png" alt="2/8" width="480" height="480" loading="lazy">
-          <img src="../assets/stage3.png" alt="3/8" width="480" height="480" loading="lazy">
-          <img src="../assets/stage4.png" alt="4/8" width="480" height="480" loading="lazy">
-          <img src="../assets/stage5.png" alt="5/8" width="480" height="480" loading="lazy">
-          <img src="../assets/stage6.png" alt="6/8" width="480" height="480" loading="lazy">
-          <img src="../assets/stage7.png" alt="7/8" width="480" height="480" loading="lazy">
-          <img src="../assets/stage8.png" alt="8/8" width="480" height="480" loading="lazy">
+          <img src="../assets/stage1.webp" alt="1/8" class="active" width="480" height="480">
+          <img src="../assets/stage2.webp" alt="2/8" width="480" height="480" loading="lazy">
+          <img src="../assets/stage3.webp" alt="3/8" width="480" height="480" loading="lazy">
+          <img src="../assets/stage4.webp" alt="4/8" width="480" height="480" loading="lazy">
+          <img src="../assets/stage5.webp" alt="5/8" width="480" height="480" loading="lazy">
+          <img src="../assets/stage6.webp" alt="6/8" width="480" height="480" loading="lazy">
+          <img src="../assets/stage7.webp" alt="7/8" width="480" height="480" loading="lazy">
+          <img src="../assets/stage8.webp" alt="8/8" width="480" height="480" loading="lazy">
         </div>
         <div class="meta">
           <h3 id="stageTitle">%%STAGE1_TITLE%%</h3>
@@ -524,10 +524,10 @@ TEMPLATE = '''<!DOCTYPE html>
         <p>%%THEMES_P%%</p>
       </div>
       <div class="themes">
-        <div class="theme-card"><img src="../assets/theme-sakura.png" alt="%%TN1%%" loading="lazy" width="480" height="480"><span>%%TN1%%</span></div>
-        <div class="theme-card"><img src="../assets/theme-asgard.png" alt="%%TN2%%" loading="lazy" width="480" height="480"><span>%%TN2%%</span></div>
-        <div class="theme-card"><img src="../assets/theme-steampunk.png" alt="%%TN3%%" loading="lazy" width="480" height="480"><span>%%TN3%%</span></div>
-        <div class="theme-card"><img src="../assets/theme-cyberpunk.png" alt="%%TN4%%" loading="lazy" width="480" height="480"><span>%%TN4%%</span></div>
+        <div class="theme-card"><img src="../assets/theme-sakura.webp" alt="%%TN1%%" loading="lazy" width="480" height="480"><span>%%TN1%%</span></div>
+        <div class="theme-card"><img src="../assets/theme-asgard.webp" alt="%%TN2%%" loading="lazy" width="480" height="480"><span>%%TN2%%</span></div>
+        <div class="theme-card"><img src="../assets/theme-steampunk.webp" alt="%%TN3%%" loading="lazy" width="480" height="480"><span>%%TN3%%</span></div>
+        <div class="theme-card"><img src="../assets/theme-cyberpunk.webp" alt="%%TN4%%" loading="lazy" width="480" height="480"><span>%%TN4%%</span></div>
       </div>
     </div>
   </section>
