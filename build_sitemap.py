@@ -11,9 +11,7 @@ import pathlib
 SITE = "https://pixelislands.app"
 LASTMOD = "2026-07-29"
 LOCALES = {"de", "fr", "es", "ja", "pt-br", "ru", "uk"}
-# "stopgamble" hosts a privacy policy for a different app; it is deliberately kept
-# out of the Pixel Islands sitemap so it doesn't dilute the domain's topical focus.
-SKIP_DIRS = {".git", "assets", "node_modules", "stopgamble"}
+SKIP_DIRS = {".git", "assets", "node_modules"}
 
 ROOT = pathlib.Path(__file__).parent
 
