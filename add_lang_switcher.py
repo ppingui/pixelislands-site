@@ -30,6 +30,8 @@ def relative(from_path, to_path):
 
 changed, skipped = [], []
 targets = sorted(ROOT.rglob("guides/**/index.html")) + sorted(ROOT.rglob("guides/index.html"))
+for section in ("about", "support", "privacy"):
+    targets += sorted(ROOT.rglob(f"{section}/index.html"))
 for idx in sorted(set(targets)):
     html = idx.read_text(encoding="utf-8")
     if 'class="wrap lang-row"' in html:

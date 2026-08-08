@@ -14,6 +14,7 @@ Key facts:
 ## Pages
 
 - [Home](https://pixelislands.app/): overview, features, island themes, FAQ
+- [About](https://pixelislands.app/about/): who makes Pixel Islands and why — independent developer Kyrylo Lozovyi, working from Kyiv, Ukraine; the no-streaks/no-guilt design rationale
 - [Guides hub](https://pixelislands.app/guides/): index of all walking guides
 - [Best step tracker apps for iPhone](https://pixelislands.app/guides/best-step-tracker-apps-iphone/): pedometer/step-counter roundup — Apple Health, Pedometer++, StepsApp, Pacer, Pixel Islands; how to choose one
 - [Best walking games for iPhone](https://pixelislands.app/guides/best-walking-games-iphone/): honest comparison of Pixel Islands, Pikmin Bloom, Pokémon GO, Zombies, Run!, Walkr, Wokamon, The Walk

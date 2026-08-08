@@ -64,6 +64,7 @@ L = {
     ],
     cta_h2="Bereit für deine erste Insel?", cta_p="Kostenlos im App Store. Dein nächster Spaziergang zählt schon.",
     footer_made="© 2026 Pixel Islands · Gemacht mit 🏝️ und vielen Spaziergängen",
+    foot_about="Über uns",
     foot_support="Support", foot_privacy="Datenschutz", foot_store="App Store",
     nav_guides="Guides",
     guides_all="Alle Ratgeber ansehen →",
@@ -116,6 +117,7 @@ L = {
     ],
     cta_h2="Prêt à faire grandir votre première île ?", cta_p="Gratuit sur l'App Store. Votre prochaine promenade compte déjà.",
     footer_made="© 2026 Pixel Islands · Fait avec 🏝️ et beaucoup de marche",
+    foot_about="À propos",
     foot_support="Assistance", foot_privacy="Confidentialité", foot_store="App Store",
     nav_guides="Guides",
     guides_all="Voir tous les guides →",
@@ -168,6 +170,7 @@ L = {
     ],
     cta_h2="¿Listo para hacer crecer tu primera isla?", cta_p="Gratis en el App Store. Tu próximo paseo ya cuenta.",
     footer_made="© 2026 Pixel Islands · Hecho con 🏝️ y muchos paseos",
+    foot_about="Acerca de",
     foot_support="Soporte", foot_privacy="Privacidad", foot_store="App Store",
     nav_guides="Guías",
     guides_all="Ver todas las guías →",
@@ -220,6 +223,7 @@ L = {
     ],
     cta_h2="最初の島を育てはじめよう", cta_p="App Storeで無料。次の散歩からもう始まっています。",
     footer_made="© 2026 Pixel Islands · 🏝️とたくさんの散歩から生まれました",
+    foot_about="概要",
     foot_support="サポート", foot_privacy="プライバシー", foot_store="App Store",
     nav_guides="ガイド",
     guides_all="すべてのガイドを見る →",
@@ -272,6 +276,7 @@ L = {
     ],
     cta_h2="Pronto para criar sua primeira ilha?", cta_p="Grátis na App Store. Sua próxima caminhada já conta.",
     footer_made="© 2026 Pixel Islands · Feito com 🏝️ e muitas caminhadas",
+    foot_about="Sobre",
     foot_support="Suporte", foot_privacy="Privacidade", foot_store="App Store",
     nav_guides="Guias",
     guides_all="Ver todos os guias →",
@@ -324,6 +329,7 @@ L = {
     ],
     cta_h2="Готов вырастить первый остров?", cta_p="Бесплатно в App Store. Следующая прогулка уже идёт в счёт.",
     footer_made="© 2026 Pixel Islands · Сделано с 🏝️ и множеством прогулок",
+    foot_about="О проекте",
     foot_support="Поддержка", foot_privacy="Конфиденциальность", foot_store="App Store",
     nav_guides="Гайды",
     guides_all="Все гайды →",
@@ -376,6 +382,7 @@ L = {
     ],
     cta_h2="Готовий виростити перший острів?", cta_p="Безкоштовно в App Store. Наступна прогулянка вже йде в залік.",
     footer_made="© 2026 Pixel Islands · Зроблено з 🏝️ та безліччю прогулянок",
+    foot_about="Про проєкт",
     foot_support="Підтримка", foot_privacy="Конфіденційність", foot_store="App Store",
     nav_guides="Гайди",
     guides_all="Усі гайди →",
@@ -571,8 +578,9 @@ TEMPLATE = '''<!DOCTYPE html>
     <div>%%FOOTER_MADE%%</div>
     <div>
       <a href="%%APP_URL%%">%%FOOT_STORE%%</a>
-      <a href="../support/">%%FOOT_SUPPORT%%</a>
-      <a href="../privacy/">%%FOOT_PRIVACY%%</a>
+      <a href="about/">%%FOOT_ABOUT%%</a>
+      <a href="support/">%%FOOT_SUPPORT%%</a>
+      <a href="privacy/">%%FOOT_PRIVACY%%</a>
     </div>
   </div>
   <div class="wrap" style="margin-top:16px; font-size:0.88rem">🌐 %%LANGROW%%</div>
@@ -698,7 +706,7 @@ def build(locale_dir, t):
         "%%FAQ_H2%%": t["faq_h2"], "%%FAQ_HTML%%": faq_html,
         "%%CTA_H2%%": t["cta_h2"], "%%CTA_P%%": t["cta_p"],
         "%%FOOTER_MADE%%": t["footer_made"], "%%FOOT_STORE%%": t["foot_store"],
-        "%%FOOT_SUPPORT%%": t["foot_support"], "%%FOOT_PRIVACY%%": t["foot_privacy"],
+        "%%FOOT_ABOUT%%": t["foot_about"], "%%FOOT_SUPPORT%%": t["foot_support"], "%%FOOT_PRIVACY%%": t["foot_privacy"],
         "%%LANGROW%%": langrow(path),
         "%%STAGE_TPL_JS%%": json.dumps(t["stage_tpl"], ensure_ascii=False),
         "%%LABELS_JS%%": json.dumps(t["labels"], ensure_ascii=False),

@@ -126,7 +126,7 @@ HUB = {
     intro="Everything we've learned about steps, habits, and making a daily walk something "
           "you look forward to — written by the team behind Pixel Islands.",
     nav_features="Features", nav_guides="Guides", nav_dl="Download",
-    foot_home="Home", foot_support="Support", foot_privacy="Privacy",
+    foot_home="Home", foot_about="About", foot_support="Support", foot_privacy="Privacy",
     footer_made="© 2026 Pixel Islands",
     cta_h2="Make your next walk count",
     cta_p="Pixel Islands grows a cozy pixel island from your daily steps. Free on iPhone.",
@@ -233,6 +233,7 @@ for loc in LOCALE_DIRS:
     HUB[loc].setdefault("nav_features", src["nav_features"])
     HUB[loc].setdefault("nav_guides", src["nav_guides"])
     HUB[loc].setdefault("nav_dl", src["nav_dl"])
+    HUB[loc].setdefault("foot_about", src["foot_about"])
     HUB[loc].setdefault("foot_support", src["foot_support"])
     HUB[loc].setdefault("foot_privacy", src["foot_privacy"])
     HUB[loc].setdefault("footer_made", src["footer_made"])
@@ -314,7 +315,7 @@ def render(loc):
     <nav>
       <a href="{home}#features">{t['nav_features']}</a>
       <a href="{up}{'guides/' if not loc else loc + '/guides/'}">{t['nav_guides']}</a>
-      <a href="{up}support/">{t['foot_support']}</a>
+      <a href="{home}support/">{t['foot_support']}</a>
       <a class="cta-mini" href="{APP_URL}">{t['nav_dl']}</a>
     </nav>
   </div>
@@ -353,8 +354,9 @@ def render(loc):
     <div>{t['footer_made']}</div>
     <div>
       <a href="{home}">{t['foot_home']}</a>
-      <a href="{up}support/">{t['foot_support']}</a>
-      <a href="{up}privacy/">{t['foot_privacy']}</a>
+      <a href="{home}about/">{t['foot_about']}</a>
+      <a href="{home}support/">{t['foot_support']}</a>
+      <a href="{home}privacy/">{t['foot_privacy']}</a>
     </div>
   </div>
 </footer>
