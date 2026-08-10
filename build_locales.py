@@ -409,6 +409,7 @@ TEMPLATE = '''<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#b9b5f0">
 <title>%%TITLE%%</title>
 <meta name="description" content="%%META%%">
 <link rel="canonical" href="%%CANONICAL%%">

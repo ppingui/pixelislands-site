@@ -239,6 +239,24 @@ for loc in LOCALE_DIRS:
     HUB[loc].setdefault("footer_made", src["footer_made"])
 
 
+LANG_NAME = {"": "English", "de": "Deutsch", "fr": "Français", "es": "Español",
+             "ja": "日本語", "pt-br": "Português", "ru": "Русский", "uk": "Українська"}
+
+
+def lang_row(cur_loc):
+    """Visible language switcher — the generator owns this so regenerating a hub
+    cannot silently drop it (a post-hoc script once did)."""
+    depth = 1 if not cur_loc else 2          # /guides/ vs /<loc>/guides/
+    parts = []
+    for l in LOCALE_DIRS:
+        target = "guides/" if not l else f"{l}/guides/"
+        if l == cur_loc:
+            parts.append(f'<strong style="color:#fff">{LANG_NAME[l]}</strong>')
+        else:
+            parts.append(f'<a href="{"../" * depth}{target}">{LANG_NAME[l]}</a>')
+    return " · ".join(parts)
+
+
 def hub_url(loc):
     return f"{SITE}/guides/" if not loc else f"{SITE}/{loc}/guides/"
 
@@ -270,6 +288,7 @@ def render(loc):
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#b9b5f0">
 <title>{t['title']}</title>
 <meta name="description" content="{t['meta']}">
 <link rel="canonical" href="{hub_url(loc)}">
@@ -359,6 +378,7 @@ def render(loc):
       <a href="{home}privacy/">{t['foot_privacy']}</a>
     </div>
   </div>
+    <div class="wrap lang-row">{lang_row(loc)}</div>
 </footer>
 
 </body>
