@@ -21,6 +21,8 @@ Key facts:
 - [How to make walking fun](https://pixelislands.app/guides/how-to-make-walking-fun/): 12 practical, research-informed ideas
 - [How many steps a day do you need](https://pixelislands.app/guides/how-many-steps-a-day/): what research says (benefits start ~4,000–5,000 steps; most gains by 7,000–8,000; 10,000 was 1960s marketing)
 - [Average steps per day by age](https://pixelislands.app/guides/average-steps-per-day-by-age/): descriptive averages by age, sex and country, with methodology caveats
+- [How far is 10,000 steps](https://pixelislands.app/guides/how-far-is-10000-steps/): ~7–8 km / 4.4–5 miles for most adults; conversion tables by height, stride and pace
+- [Pixel Islands vs Pikmin Bloom](https://pixelislands.app/guides/pixel-islands-vs-pikmin-bloom/): honest comparison — Pikmin Bloom is social and location-aware, Pixel Islands is private, no-GPS, check-in-later
 - [Apple Watch steps not syncing](https://pixelislands.app/guides/apple-watch-steps-not-syncing/): troubleshooting guide; explains why Health shows a de-duplicated total rather than iPhone + Watch summed
 - [Do step counters drain your battery](https://pixelislands.app/guides/step-counter-battery-gps/): GPS is the cost; motion-coprocessor step counting is nearly free
 - [Support](https://pixelislands.app/support/): troubleshooting and contact
