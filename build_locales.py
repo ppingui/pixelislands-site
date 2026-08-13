@@ -32,6 +32,7 @@ L = {
     h1="Deine Schritte lassen<br>eine Pixel-Insel wachsen",
     sub="Pixel Islands ist ein gemütliches Schrittzähler-Spiel für iPhone. Geh in der echten Welt spazieren und sieh zu, wie deine Insel in 8 Stufen wächst — ohne Druck, ohne Coaching, einfach Wachstum.",
     rating="4,8 im App Store",
+    chip1="🏝️ 21 Welten", chip2="🌍 20 Sprachen", chip3="🔒 Kein GPS", chip4="❤️ Apple Health",
     hero_alt="Fünf schwebende Pixel-Inseln aus dem Spiel Pixel Islands: Cyberpunk, Sakura, Wiese, Olymp und Steampunk",
     badge1="Laden im", badge2="App Store",
     how_h2="Gehen, das sich lohnt",
@@ -85,6 +86,7 @@ L = {
     h1="Vos pas font grandir<br>une petite île en pixels",
     sub="Pixel Islands est un jeu podomètre tout en douceur pour iPhone. Marchez dans le monde réel et regardez votre île évoluer en 8 étapes — sans pression, sans coaching, juste de la croissance.",
     rating="4,8 sur l'App Store",
+    chip1="🏝️ 21 mondes", chip2="🌍 20 langues", chip3="🔒 Sans GPS", chip4="❤️ Apple Santé",
     hero_alt="Cinq îles pixel art flottantes du jeu Pixel Islands : cyberpunk, sakura, prairie, Olympe et steampunk",
     badge1="Télécharger dans", badge2="l'App Store",
     how_h2="La marche, enfin récompensée",
@@ -138,6 +140,7 @@ L = {
     h1="Tus pasos hacen crecer<br>una pequeña isla píxel",
     sub="Pixel Islands es un acogedor juego podómetro para iPhone. Camina en el mundo real y mira cómo tu isla evoluciona en 8 etapas: sin presión, sin sermones, solo crecimiento.",
     rating="4,8 en el App Store",
+    chip1="🏝️ 21 mundos", chip2="🌍 20 idiomas", chip3="🔒 Sin GPS", chip4="❤️ Apple Salud",
     hero_alt="Cinco islas pixel art flotantes del juego Pixel Islands: cyberpunk, sakura, pradera, Olimpo y steampunk",
     badge1="Descargar en el", badge2="App Store",
     how_h2="Caminar, por fin recompensado",
@@ -191,6 +194,7 @@ L = {
     h1="歩くたびに育つ、<br>小さなピクセルの島",
     sub="Pixel IslandsはiPhone向けのゆったり歩数計ゲーム。現実世界で歩くと、島が8段階で成長していきます。プレッシャーもコーチングもなし。ただ、育っていくだけ。",
     rating="App Storeで4.8",
+    chip1="🏝️ 21の世界", chip2="🌍 20言語対応", chip3="🔒 GPS不使用", chip4="❤️ ヘルスケア連携",
     hero_alt="Pixel Islandsの5つの浮かぶピクセルアートの島:サイバーパンク、桜、草原、オリンポス、スチームパンク",
     badge1="ダウンロードは", badge2="App Store",
     how_h2="歩くことが、ごほうびになる",
@@ -244,6 +248,7 @@ L = {
     h1="Seus passos fazem crescer<br>uma ilhinha de pixels",
     sub="Pixel Islands é um jogo pedômetro aconchegante para iPhone. Caminhe no mundo real e veja sua ilha evoluir em 8 estágios — sem pressão, sem cobrança, só crescimento.",
     rating="4,8 na App Store",
+    chip1="🏝️ 21 mundos", chip2="🌍 20 idiomas", chip3="🔒 Sem GPS", chip4="❤️ Apple Saúde",
     hero_alt="Cinco ilhas pixel art flutuantes do jogo Pixel Islands: cyberpunk, sakura, campina, Olimpo e steampunk",
     badge1="Baixar na", badge2="App Store",
     how_h2="Caminhar, enfim recompensado",
@@ -297,6 +302,7 @@ L = {
     h1="Твои шаги растят<br>маленький пиксельный остров",
     sub="Pixel Islands — уютная игра-шагомер для iPhone. Гуляй в реальном мире и смотри, как остров проходит 8 стадий роста — без давления, без тренерских нотаций, просто рост.",
     rating="4,8 в App Store",
+    chip1="🏝️ 21 мир", chip2="🌍 20 языков", chip3="🔒 Без GPS", chip4="❤️ Apple Health",
     hero_alt="Пять парящих пиксельных островов из игры Pixel Islands: киберпанк, сакура, луг, Олимп и стимпанк",
     badge1="Загрузите в", badge2="App Store",
     how_h2="Ходьба, которая радует",
@@ -350,6 +356,7 @@ L = {
     h1="Твої кроки вирощують<br>маленький піксельний острів",
     sub="Pixel Islands — затишна гра-крокомір для iPhone. Гуляй у реальному світі й дивись, як острів проходить 8 стадій росту — без тиску, без тренерських повчань, просто ріст.",
     rating="4,8 в App Store",
+    chip1="🏝️ 21 світ", chip2="🌍 20 мов", chip3="🔒 Без GPS", chip4="❤️ Apple Health",
     hero_alt="П'ять летючих піксельних островів із гри Pixel Islands: кіберпанк, сакура, лука, Олімп і стімпанк",
     badge1="Завантажте в", badge2="App Store",
     how_h2="Ходьба, що тішить",
@@ -410,6 +417,7 @@ TEMPLATE = '''<!DOCTYPE html>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#b9b5f0">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#14122b">
 <title>%%TITLE%%</title>
 <meta name="description" content="%%META%%">
 <link rel="canonical" href="%%CANONICAL%%">
@@ -459,6 +467,12 @@ TEMPLATE = '''<!DOCTYPE html>
   <div class="wrap hero">
     <h1>%%H1%%</h1>
     <p class="sub">%%SUB%%</p>
+    <div class="chips">
+      <span class="chip">%%CHIP1%%</span>
+      <span class="chip">%%CHIP2%%</span>
+      <span class="chip">%%CHIP3%%</span>
+      <span class="chip">%%CHIP4%%</span>
+    </div>
     <div class="store-row">
       <a class="appstore-badge" href="%%APP_URL%%" aria-label="%%BADGE1%% %%BADGE2%%">
         %%BADGE_SVG%%
@@ -699,6 +713,7 @@ def build(locale_dir, t):
         "%%GUIDES_H2%%": t["guides_h2"], "%%GUIDES_P%%": t["guides_p"],
         "%%G1T%%": t["g1t"], "%%G1D%%": t["g1d"], "%%G2T%%": t["g2t"], "%%G2D%%": t["g2d"],
         "%%G0T%%": t["g0t"], "%%G0D%%": t["g0d"],
+        "%%CHIP1%%": t["chip1"], "%%CHIP2%%": t["chip2"], "%%CHIP3%%": t["chip3"], "%%CHIP4%%": t["chip4"],
         "%%ENTITY_JSONLD%%": entity_jsonld(t["lang"], f"{SITE}/{locale_dir}/"),
         "%%G3T%%": t["g3t"], "%%G3D%%": t["g3d"], "%%GUIDES_ALL%%": t["guides_all"],
         "%%THEMES_H2%%": t["themes_h2"], "%%THEMES_P%%": t["themes_p"],

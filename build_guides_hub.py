@@ -289,6 +289,7 @@ def render(loc):
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#b9b5f0">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#14122b">
 <title>{t['title']}</title>
 <meta name="description" content="{t['meta']}">
 <link rel="canonical" href="{hub_url(loc)}">
