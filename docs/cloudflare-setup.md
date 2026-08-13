@@ -93,7 +93,15 @@ curl -sI https://pixelislands.app/assets/hero.webp | grep -iE 'cache-control|cf-
 Expect `cache-control: max-age=31536000` and a `cf-cache-status` header. Before the change it
 reads `max-age=600` with no Cloudflare headers.
 
-### 7. AI crawler visibility
+### 7. Crawler Hints (automatic IndexNow) — optional
+**Caching → Configuration → Crawler Hints → enable.** Free on all plans. Cloudflare then
+signals IndexNow itself when it sees content change.
+
+This site already submits to IndexNow from `ping_indexnow.py` (diff-driven, runs after each
+deploy), so Crawler Hints is duplication rather than new capability. Enabling both is harmless —
+IndexNow tolerates duplicate signals — but it is not a reason to migrate on its own.
+
+### 8. AI crawler visibility
 Once traffic flows through Cloudflare, the dashboard's **Analytics** and bot/AI-crawler sections
 show requests by user agent — this is where `GPTBot`, `OAI-SearchBot`, `ClaudeBot`,
 `PerplexityBot` and `ChatGPT-User` become countable. Cloudflare's UI for this has moved around
