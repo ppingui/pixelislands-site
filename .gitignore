@@ -1,2 +1,6 @@
 # local record of what was last submitted to IndexNow
 .indexnow-state.json
+
+# never commit Google service-account keys
+*service-account*.json
+gsc-key*.json
