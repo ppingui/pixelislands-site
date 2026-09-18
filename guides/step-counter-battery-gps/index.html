@@ -216,6 +216,18 @@
     <li>Audit <strong>Settings → Privacy &amp; Security → Location Services</strong> and demote anything unjustifiably set to Always.</li>
     <li>A step tracker asking for location is asking for something it doesn't need — for your battery or your privacy.</li>
   </ul>
+
+  <h2>Common questions</h2>
+  <h3>Do step counters need GPS?</h3>
+  <p>No. Steps are counted by the iPhone's low-power motion coprocessor using the accelerometer, not by satellite positioning. GPS is only needed if an app wants to draw your route on a map or measure distance along real roads. A step counter that only reports how many steps you took has no reason to ask for location at all.</p>
+  <h3>Does the Health app drain battery?</h3>
+  <p>Essentially no. The Health app is a store of data your iPhone is already collecting. The motion coprocessor counts steps continuously whether or not the Health app is open, so reading that data back costs almost nothing. Apps that read step counts from Apple Health inherit the same negligible cost.</p>
+  <h3>Why does my iPhone have step data for days I never opened a fitness app?</h3>
+  <p>Because step counting is done in hardware, not by an app. The low-power motion coprocessor tracks movement all the time and writes it to Health in the background. Fitness apps do not create that data — they just read it, which is why your step history goes back further than any app you installed.</p>
+  <h3>How do I find which app is draining my iPhone battery?</h3>
+  <p>Open Settings, then Battery, and scroll to the per-app usage list. Switch between the last 24 hours and the last 10 days, and look at the Screen On versus Background split under each app. Then check Settings, Privacy &amp; Security, Location Services to see which apps have Always permission — an app with high background time and Always location is usually the culprit.</p>
+  <h3>Is a step tracker without GPS better for privacy?</h3>
+  <p>Yes. A step count is just a number — it says you walked, not where. A GPS route is far more revealing: a few days of tracked walks will show where you live, where you work, and when you are away from home. An app that never requests location permission cannot build that history in the first place.</p>
 </main>
 
 <footer class="site">
