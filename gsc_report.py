@@ -197,8 +197,25 @@ def fmt(rows, dims):
     return out
 
 
+LOCALES = {"de", "fr", "es", "ja", "pt-br", "ru", "uk"}
+
+
+def canonical_path(url: str) -> tuple:
+    """Reduce a GSC page URL to (logical path, locale).
+
+    Drops the origin, any #fragment and any ?query, then lifts a locale prefix off
+    the front, so /ru/guides/x/, /guides/x/ and /guides/x/#faq all reduce to the
+    same logical page and differ only by locale.
+    """
+    path = urllib.parse.urlsplit(url).path or "/"
+    parts = [p for p in path.split("/") if p]
+    if parts and parts[0] in LOCALES:
+        return "/" + "/".join(parts[1:]) + ("/" if len(parts) > 1 else ""), parts[0]
+    return path, "en"
+
+
 def quick_wins(token, start, end):
-    """The four buckets that actually suggest an action."""
+    """The buckets that actually suggest an action."""
     q = fmt(query(token, start, end, ["query"]), ["query"])
     qp = fmt(query(token, start, end, ["query", "page"]), ["query", "page"])
 
@@ -206,10 +223,21 @@ def quick_wins(token, start, end):
     low_ctr = [r for r in q if r["impressions"] >= 50 and r["ctr"] < 3]
     page2 = [r for r in q if 11 <= r["position"] <= 20 and r["impressions"] >= 10]
 
+    # Raw GSC page strings overstate cannibalization badly. Anchor links Google
+    # generates into homepage sections (/#faq, /#features) arrive as separate URLs,
+    # and a translated page ranking in its own language is the hreflang mesh working,
+    # not two pages fighting. Collapse both before deciding anything is wrong.
     by_query = defaultdict(set)
     for r in qp:
-        by_query[r["query"]].add(r["page"])
-    cannibal = {k: v for k, v in by_query.items() if len(v) > 1}
+        by_query[r["query"]].add(canonical_path(r["page"]))
+
+    cannibal, cross_locale = {}, {}
+    for kq, pairs in by_query.items():
+        paths = {p for p, _ in pairs}
+        if len(paths) > 1:
+            cannibal[kq] = paths
+        elif len({loc for _, loc in pairs}) > 1:
+            cross_locale[kq] = (next(iter(paths)), sorted(loc for _, loc in pairs))
 
     def table(title, rows, note):
         print(f"\n{title}  ({len(rows)})")
@@ -237,14 +265,25 @@ def quick_wins(token, start, end):
           "pos 11-20 — expand the content or add internal links")
 
     print(f"\nD. CANNIBALIZATION  ({len(cannibal)})")
-    print("  one query, multiple of our pages competing")
+    print("  one query, genuinely different pages competing — fragments and")
+    print("  translations already collapsed, so these are real overlaps")
     if not cannibal:
         print("    — none")
     else:
-        for kq, pages in sorted(cannibal.items(), key=lambda x: -len(x[1]))[:10]:
+        for kq, paths in sorted(cannibal.items(), key=lambda x: -len(x[1]))[:10]:
             print(f"    {kq[:50]}")
-            for p in sorted(pages):
-                print(f"        {p.replace('https://pixelislands.app','')}")
+            for p in sorted(paths):
+                print(f"        {p}")
+
+    print(f"\nE. CROSS-LOCALE OVERLAP  ({len(cross_locale)})")
+    print("  same page, several languages ranking for one query — usually fine,")
+    print("  but check hreflang if the wrong language is winning")
+    if not cross_locale:
+        print("    — none")
+    else:
+        for kq, (path, locs) in sorted(cross_locale.items(), key=lambda x: -len(x[1][1]))[:10]:
+            print(f"    {kq[:50]}")
+            print(f"        {path}  [{', '.join(locs)}]")
 
 
 def main():
