@@ -8,36 +8,152 @@ Usage:
     python3 gsc_report.py --raw pages
     python3 gsc_report.py --key /path/to/sa.json
 
-Auth: a Google Cloud service-account JSON key whose client_email has been added as a
-user on the Search Console property. Default location is ~/.gsc-service-account.json
-(deliberately OUTSIDE this repo — never commit the key).
+Auth, in order of preference:
 
-No third-party HTTP/Google libraries: signs the JWT with `cryptography` (already present)
-and talks to the REST API over urllib.
+1. OAuth desktop-app credentials (default). Put the client JSON downloaded from Google
+   Cloud at ~/.gsc-oauth-client.json. The first run opens a browser once; the refresh
+   token is cached at ~/.gsc-token.json and reused silently after that. You authorise as
+   yourself, so no extra Search Console user needs to be added.
+2. A service-account JSON key at ~/.gsc-service-account.json, whose client_email has been
+   added as a user on the property. Many organisations block creating these keys via the
+   iam.disableServiceAccountKeyCreation policy, hence option 1 being the default.
+
+Both paths keep credentials OUTSIDE this repo. Never commit them.
+
+No third-party HTTP/Google libraries: signs the service-account JWT with `cryptography`
+(already present) and talks to the REST API over urllib.
 """
 import argparse
 import base64
 import datetime as dt
+import hashlib
 import json
+import os
 import pathlib
+import secrets
 import sys
 import time
+import urllib.error
 import urllib.parse
 import urllib.request
+import webbrowser
 from collections import defaultdict
+from http.server import BaseHTTPRequestHandler, HTTPServer
 
 SITE = "sc-domain:pixelislands.app"
 TOKEN_URL = "https://oauth2.googleapis.com/token"
+AUTH_URL = "https://accounts.google.com/o/oauth2/v2/auth"
 API = "https://searchconsole.googleapis.com/webmasters/v3/sites/{site}/searchAnalytics/query"
 SCOPE = "https://www.googleapis.com/auth/webmasters.readonly"
 DEFAULT_KEY = pathlib.Path.home() / ".gsc-service-account.json"
+CLIENT_FILE = pathlib.Path.home() / ".gsc-oauth-client.json"
+TOKEN_FILE = pathlib.Path.home() / ".gsc-token.json"
 
 
 def _b64(data: bytes) -> str:
     return base64.urlsafe_b64encode(data).rstrip(b"=").decode()
 
 
-def access_token(key_path: pathlib.Path) -> str:
+def _post_form(url: str, params: dict) -> dict:
+    body = urllib.parse.urlencode(params).encode()
+    with urllib.request.urlopen(urllib.request.Request(url, data=body), timeout=30) as r:
+        return json.load(r)
+
+
+def _write_private(path: pathlib.Path, data: dict) -> None:
+    """Write 0600 from the start — never let the token exist world-readable, even briefly."""
+    fd = os.open(path, os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o600)
+    with os.fdopen(fd, "w") as fh:
+        json.dump(data, fh)
+
+
+def _client_config() -> tuple:
+    if not CLIENT_FILE.exists():
+        sys.exit(
+            f"No OAuth client at {CLIENT_FILE}\n"
+            f"In Google Cloud → APIs & Services → Credentials → Create credentials →\n"
+            f"OAuth client ID → Desktop app, download the JSON, and save it there.")
+    data = json.loads(CLIENT_FILE.read_text())
+    cfg = data.get("installed") or data.get("web")
+    if not cfg or "client_id" not in cfg:
+        sys.exit(f"{CLIENT_FILE} is not an OAuth client file (expected an 'installed' key).")
+    return cfg["client_id"], cfg.get("client_secret", "")
+
+
+def _authorise(client_id: str, client_secret: str) -> dict:
+    """One-time browser consent over a loopback redirect, with PKCE."""
+    verifier = secrets.token_urlsafe(64)
+    challenge = _b64(hashlib.sha256(verifier.encode()).digest())
+    state = secrets.token_urlsafe(16)
+    got = {}
+
+    class Handler(BaseHTTPRequestHandler):
+        def do_GET(self):
+            got.update({k: v[0] for k, v in
+                        urllib.parse.parse_qs(urllib.parse.urlparse(self.path).query).items()})
+            self.send_response(200)
+            self.send_header("Content-Type", "text/html; charset=utf-8")
+            self.end_headers()
+            ok = "code" in got
+            self.wfile.write(
+                f"<h2>{'Authorised — you can close this tab.' if ok else 'Authorisation failed.'}</h2>"
+                .encode())
+
+        def log_message(self, *a):
+            pass
+
+    srv = HTTPServer(("127.0.0.1", 0), Handler)
+    redirect = f"http://127.0.0.1:{srv.server_address[1]}"
+    url = f"{AUTH_URL}?" + urllib.parse.urlencode({
+        "client_id": client_id, "redirect_uri": redirect, "response_type": "code",
+        "scope": SCOPE, "access_type": "offline", "prompt": "consent",
+        "code_challenge": challenge, "code_challenge_method": "S256", "state": state})
+
+    print("Opening your browser to authorise read-only Search Console access.")
+    print(f"If it does not open, visit:\n{url}\n")
+    webbrowser.open(url)
+    srv.handle_request()
+    srv.server_close()
+
+    if got.get("state") != state:
+        sys.exit("OAuth state mismatch — aborted.")
+    if "code" not in got:
+        sys.exit(f"OAuth failed: {got.get('error', got)}")
+
+    tok = _post_form(TOKEN_URL, {
+        "client_id": client_id, "client_secret": client_secret, "code": got["code"],
+        "code_verifier": verifier, "grant_type": "authorization_code",
+        "redirect_uri": redirect})
+    if "refresh_token" not in tok:
+        sys.exit("Google returned no refresh token. Revoke the app at "
+                 "https://myaccount.google.com/permissions and run again.")
+    return tok
+
+
+def oauth_token() -> str:
+    client_id, client_secret = _client_config()
+
+    if TOKEN_FILE.exists():
+        saved = json.loads(TOKEN_FILE.read_text())
+        try:
+            tok = _post_form(TOKEN_URL, {
+                "client_id": client_id, "client_secret": client_secret,
+                "refresh_token": saved["refresh_token"], "grant_type": "refresh_token"})
+            return tok["access_token"]
+        except urllib.error.HTTPError as e:
+            if e.code not in (400, 401):
+                raise
+            # Refresh tokens die if revoked, unused for six months, or issued while the
+            # consent screen was still in Testing. Fall through to a fresh consent.
+            print("Saved credential rejected — re-authorising.", file=sys.stderr)
+
+    tok = _authorise(client_id, client_secret)
+    _write_private(TOKEN_FILE, {"refresh_token": tok["refresh_token"]})
+    print(f"Saved refresh token to {TOKEN_FILE} (0600).")
+    return tok["access_token"]
+
+
+def service_account_token(key_path: pathlib.Path) -> str:
     from cryptography.hazmat.primitives import hashes, serialization
     from cryptography.hazmat.primitives.asymmetric import padding
 
@@ -136,17 +252,19 @@ def main():
     ap.add_argument("--days", type=int, default=28)
     ap.add_argument("--key", type=pathlib.Path, default=DEFAULT_KEY)
     ap.add_argument("--raw", choices=["queries", "pages", "countries"])
+    ap.add_argument("--reauth", action="store_true",
+                    help="discard the cached token and run the consent flow again")
     a = ap.parse_args()
 
-    if not a.key.exists():
-        sys.exit(f"No service-account key at {a.key}\n"
-                 f"Create one in Google Cloud, enable the Search Console API, then add its\n"
-                 f"client_email as a user on the {SITE} property in Search Console.")
+    if a.reauth:
+        TOKEN_FILE.unlink(missing_ok=True)
 
     # GSC finalizes data with ~2-3 days lag; ending today would show a misleading dip.
     end = dt.date.today() - dt.timedelta(days=3)
     start = end - dt.timedelta(days=a.days)
-    token = access_token(a.key)
+
+    # Prefer a service-account key only if one was deliberately placed; otherwise OAuth.
+    token = service_account_token(a.key) if a.key.exists() else oauth_token()
 
     if a.raw:
         dims = {"queries": ["query"], "pages": ["page"], "countries": ["country"]}[a.raw]
