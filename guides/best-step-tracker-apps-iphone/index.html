@@ -40,7 +40,11 @@
   "image": "https://pixelislands.app/assets/og/best-step-tracker-apps-iphone.jpg",
   "datePublished": "2026-07-29",
   "dateModified": "2026-09-18",
-  "author": { "@type": "Organization", "name": "Pixel Islands", "url": "https://pixelislands.app/" },
+  "author": { "@type": "Person", "name": "Kyrylo Lozovyi", "jobTitle": "Independent app developer", "url": "https://pixelislands.app/about/", "worksFor": { "@type": "Organization", "name": "Pixel Islands", "url": "https://pixelislands.app/" } },
+  "citation": [
+    { "@type": "ScholarlyArticle", "name": "Accuracy of smartphone applications and wearable devices for tracking physical activity data", "author": "Case MA, Burwick HA, Volpp KG, Patel MS", "datePublished": "2015-02-10", "isPartOf": { "@type": "Periodical", "name": "JAMA" }, "sameAs": "https://doi.org/10.1001/jama.2014.17841" },
+    { "@type": "ScholarlyArticle", "name": "How Well iPhones Measure Steps in Free-Living Conditions: Cross-Sectional Validation Study", "author": "Amagasa S, Kamada M, Sasai H, Fukushima N, Kikuchi H, Lee IM, Inoue S", "datePublished": "2019-01-09", "isPartOf": { "@type": "Periodical", "name": "JMIR mHealth and uHealth" }, "sameAs": "https://doi.org/10.2196/10418" }
+  ],
   "publisher": { "@type": "Organization", "name": "Pixel Islands", "logo": { "@type": "ImageObject", "url": "https://pixelislands.app/assets/appicon.png" } },
   "mainEntityOfPage": "https://pixelislands.app/guides/best-step-tracker-apps-iphone/",
   "inLanguage": "en"
@@ -140,7 +144,17 @@
 
 <main class="doc article">
   <h1>Best Step Tracker Apps for iPhone</h1>
-  <p class="meta-row">Updated September 2026 · 8 min read</p>
+  <p class="meta-row">By Kyrylo Lozovyi · Updated September 2026 · 8 min read</p>
+
+  <div class="card">
+    <h2>Short answer</h2>
+    <ul>
+      <li><strong>You may not need an app to count at all.</strong> Every iPhone since the 5s counts steps in hardware, with nothing installed: Health → Browse → Activity → Steps.</li>
+      <li><strong>The counting is accurate; the carrying is not.</strong> Over seven days of ordinary life, iPhones logged 9,253 steps a day against a waist pedometer's 10,530 — about 12% fewer, because people put their phones down.</li>
+      <li><strong>A pocket beats a bag.</strong> In the same study a pocketed phone missed roughly 791 steps a day; a phone in a bag missed 2,104.</li>
+      <li><strong>What a step tracker app sells you is presentation</strong> — a glanceable widget, readable history, and for some people a reason to care about the number.</li>
+    </ul>
+  </div>
 
   <p>Your iPhone is already counting your steps. Right now, in your pocket, with no app installed and nothing switched on. So the honest place to start any "best step tracker app" list is here: <strong>you might not need one at all.</strong></p>
 
@@ -162,6 +176,9 @@
   <p>Because all of this runs on the motion sensor rather than GPS, it costs almost nothing in battery. We went into that properly in <a href="../step-counter-battery-gps/">do step counters drain your battery?</a></p>
 
   <h2>The step tracker apps worth knowing</h2>
+
+  <p class="meta-row"><strong>How this list was made:</strong> we started from the apps that read step data from Apple Health rather than re-counting it in the background, since background counters get suspended by iOS and lose steps. From those we kept the ones that offer a real home-screen widget, remain usable without a subscription, and have been maintained for more than a year. We did not lab-test accuracy, because on iOS the app is almost never the variable — every app below reads the same motion data through the same system, and the published research above shows that placement swamps any difference between them. One entry is our own app; it's marked as ours in the table and in its own section.</p>
+
   <div class="table-wrap">
   <table>
     <tr><th>App</th><th>Best for</th><th>Widget</th><th>Subscription</th><th>Character</th></tr>
@@ -198,7 +215,7 @@
   <p>Five criteria, in the order that matters. If you only read one section of this page, make it this one.</p>
   <ul>
     <li><strong>It reads from Apple Health rather than running its own count.</strong> Apps that use Health's data inherit your full history from day one and stay consistent with every other app on your phone; apps that count independently start at zero and quietly disagree with your Health totals forever.</li>
-    <li><strong>The widget is good enough to replace opening the app.</strong> A step tracker you have to launch is a step tracker you'll check three times and forget — the home-screen widget is the actual product, and the app behind it is mostly settings.</li>
+    <li><strong>The widget is good enough to replace opening the app.</strong> An app you have to launch is an app you'll check three times and forget — the home-screen widget is the actual product, and the app behind it is mostly settings.</li>
     <li><strong>It never asks for Always-allow location.</strong> Counting steps uses the accelerometer, not GPS, so a pedometer app requesting background location is doing something beyond counting your steps and should explain what.</li>
     <li><strong>The pricing is honest and legible.</strong> A free tier that works, a clearly described paid tier, and no countdown timers or fake discounts on the upgrade screen — if you can't tell what you'd be paying for within ten seconds, that's the answer.</li>
     <li><strong>It motivates you instead of shaming you.</strong> The best step tracker for you is the one you still have installed in three months, and guilt mechanics — broken streaks, red rings, "you failed your goal" popups — are the single most reliable predictor of an app getting deleted in week two.</li>
@@ -222,6 +239,12 @@
   <p>Nobody should claim to have the most accurate step counter on iPhone, because on this platform the app is rarely the variable. Almost every step tracker here is reading the same motion data through the same system. What actually changes the number is where the device is.</p>
   <p><strong>Phone in your pocket</strong> is reliable for ordinary walking and undercounts whenever your hips move but the phone doesn't travel with them — pushing a pram or trolley, carrying shopping, or leaving the phone on the desk for a lap of the office.</p>
   <p><strong>Watch on your wrist</strong> catches more incidental movement, including those trips where you left your phone behind, and can over-count arm motion that isn't walking. Neither is "correct"; they're measuring slightly different things.</p>
+  <p>It's worth knowing the size of these effects, because they're larger than the difference between any two apps here. In controlled treadmill testing published in <em>JAMA</em>, smartphone apps came within −6.7% to +6.2% of hand-counted steps across 56 walking trials, while wrist-worn wearables ranged from −22.7% to −1.5% — one wearable undercounted by more than 20%. On a treadmill, the phone in your pocket was the steadier instrument (<a href="https://jamanetwork.com/journals/jama/fullarticle/2108876" rel="nofollow">Case, Burwick, Volpp &amp; Patel, <em>JAMA</em>, 2015</a>).</p>
+
+  <p>Ordinary life is less flattering, and the gap is behavioural rather than technical. A validation study in <em>JMIR mHealth and uHealth</em> had 54 adults carry their own iPhones for seven consecutive days alongside a waist-worn Kenz Lifecorder pedometer. The iPhone recorded <strong>9,253 steps a day against the pedometer's 10,530</strong> — a shortfall of 1,277 steps, or roughly 12%, with the two measures still tracking each other closely (Spearman's ρ = 0.78) (<a href="https://mhealth.jmir.org/2019/1/e10418/" rel="nofollow">Amagasa, Kamada, Sasai, Fukushima, Kikuchi, Lee &amp; Inoue, 2019</a>).</p>
+
+  <p>That study also puts numbers on exactly the behaviour described above. Participants who almost always carried their phone lost 929 steps a day; those who seldom carried it lost 3,036. And a phone carried in a <strong>pocket</strong> undercounted by 791 steps a day against 2,104 for a phone in a <strong>bag</strong>. If you want your count closer to the truth, where you keep the phone matters far more than which app reads it.</p>
+
   <p>This is also why two apps can show different totals on the same day. If one app is reading Apple Health and another is running its own count in the background, they'll drift — and a background app that gets suspended will simply miss steps.</p>
   <p>Apple Health handles the phone-and-watch overlap by de-duplicating: when both devices recorded the same period, it picks one source rather than adding them together, which is why your daily total isn't the sum of both. Well-behaved apps inherit that logic for free. If your numbers look wrong specifically between devices, that's usually a sync issue rather than an accuracy one — see <a href="../apple-watch-steps-not-syncing/">Apple Watch steps not syncing</a>.</p>
 
