@@ -1,6 +1,11 @@
 # local record of what was last submitted to IndexNow
 .indexnow-state.json
 
-# never commit Google service-account keys
+# Never commit Google credentials. This repo is public — anything landing here is
+# published. These live in ~ instead; the patterns are a backstop against a stray copy.
 *service-account*.json
 gsc-key*.json
+*oauth-client*.json
+client_secret*.json
+.gsc-token.json
+*.pem
