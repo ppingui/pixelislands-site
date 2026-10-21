@@ -51,13 +51,14 @@ Add anything missing by hand. Set the four A records and the `www` CNAME to **Pr
 (orange cloud) — grey cloud means DNS-only and you get none of the benefits.
 
 ### 3. Set SSL/TLS mode BEFORE switching nameservers
-**SSL/TLS → Overview → Full (strict).**
+**SSL/TLS → Overview → Full** (not strict — see "Certificate renewal" below; strict took the site down on 2026-10-20).
 
 This matters more than anything else on this page. GitHub Pages force-redirects HTTP to HTTPS.
 If Cloudflare is set to **Flexible**, it talks to GitHub over HTTP, GitHub redirects to HTTPS,
-Cloudflare follows it back to itself — **infinite redirect loop, site down.** Full (strict) is
-correct because GitHub already serves a valid Let's Encrypt certificate for this domain
-(issuer `Let's Encrypt CN=YR2`, currently valid to 2026-10-20).
+Cloudflare follows it back to itself — **infinite redirect loop, site down.** Full avoids the loop
+by talking HTTPS to GitHub. Full (strict) would additionally require GitHub's certificate to be
+valid, and GitHub cannot renew it while the domain is proxied — that is what caused the
+2026-10-20 outage.
 
 ### 4. Change nameservers at Porkbun
 Cloudflare assigns you two nameservers. In
@@ -118,15 +119,18 @@ them explicitly.
 GitHub renews the Pages certificate via an HTTP challenge on your domain. With Cloudflare
 proxying, that challenge can be intercepted, so renewal may fail.
 
-- Current certificate expires **2026-10-20**, so this first becomes relevant in October.
-- If GitHub's cert lapses while you are on **Full (strict)**, the origin connection fails and the
-  site goes down.
-- **Mitigation:** around renewal time, check GitHub Pages settings still shows the certificate as
-  valid. If renewal fails, temporarily set the four A records and `www` to **DNS-only** (grey
-  cloud), let GitHub renew, then re-enable proxying.
-- **Lower-risk alternative:** run **Full** instead of Full (strict). It still encrypts to the
-  origin but tolerates a lapsed/invalid origin certificate, so a failed renewal degrades quietly
-  instead of taking the site down.
+- **This happened.** The certificate expired 2026-10-20 12:15 GMT and renewal failed: GitHub
+  reported `bad_authz` ("The ACME authorization is in a bad state"), because DNS resolves to
+  Cloudflare rather than GitHub, so GitHub cannot validate the domain. On Full (strict) every URL
+  returned **526** until the SSL mode was changed.
+- **It will keep happening.** While the records are proxied, GitHub can never renew. Grey-clouding
+  to force a renewal only buys another 90 days.
+- **Standing configuration: SSL/TLS mode = Full (not strict).** Cloudflare still encrypts to the
+  origin but does not validate the origin certificate ("It can be expired, self-signed, or not
+  even have a matching CN/SAN entry" — Cloudflare docs), so GitHub's lapsed certificate is
+  harmless. Visitors only ever see Cloudflare's edge certificate, which renews automatically.
+  The trade-off is that the Cloudflare→GitHub hop is unauthenticated; acceptable for a static
+  public site with no logins or user data.
 
 ---
 
