@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#b9b5f0">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#14122b">
 <title>Política de Privacidade — Pixel Islands</title>
-<meta name="description" content="Política de privacidade do app Pixel Islands para iOS: quais dados coletamos, como os dados de passos do HealthKit são usados e quais são os seus direitos.">
+<meta name="description" content="Política de privacidade do app Pixel Islands para iOS e Android: quais dados coletamos, como os dados de passos do Apple HealthKit e do Health Connect são usados e quais são os seus direitos.">
 <link rel="canonical" href="https://pixelislands.app/pt-br/privacy/">
 <link rel="alternate" hreflang="en" href="https://pixelislands.app/privacy/">
 <link rel="alternate" hreflang="de" href="https://pixelislands.app/de/privacy/">
@@ -55,11 +55,11 @@
 
 <main class="doc">
   <h1>Política de Privacidade</h1>
-  <p class="updated">Data de vigência: 26 de março de 2026 · Última atualização: 3 de abril de 2026</p>
+  <p class="updated">Data de vigência: 26 de março de 2026 · Última atualização: 25 de outubro de 2026</p>
 
   <p>Esta é uma tradução de cortesia; em caso de divergência, prevalece a versão em inglês disponível em <a href="https://pixelislands.app/privacy/">https://pixelislands.app/privacy/</a>.</p>
 
-  <p>O Pixel Islands ("nós", "nosso", "nossa") respeita a sua privacidade. Esta Política de Privacidade explica quais informações coletamos, como as usamos e quais são as suas opções ao usar o aplicativo móvel Pixel Islands (o "App").</p>
+  <p>O Pixel Islands ("nós", "nosso", "nossa") respeita a sua privacidade. Esta Política de Privacidade explica quais informações coletamos, como as usamos e quais são as suas opções ao usar o aplicativo móvel Pixel Islands para iPhone e Android (o "App").</p>
 
   <h2>1. Informações Que Coletamos</h2>
   <p><strong>a) Dados de Saúde (com a sua permissão)</strong></p>
@@ -67,6 +67,11 @@
   <ul>
     <li>Dados de contagem de passos (referentes ao dia de hoje e a cálculos de progresso relacionados)</li>
   </ul>
+  <p>No Android, se você conceder permissão por meio do Health Connect, o Pixel Islands lê:</p>
+  <ul>
+    <li>Dados de contagem de passos (referentes ao dia de hoje e a cálculos de progresso relacionados)</li>
+  </ul>
+  <p>No Android, o App lê os passos enquanto você o usa e em segundo plano, com uma sincronização a cada hora que mantém atualizados o widget da tela inicial e as notificações de marcos. O App nunca grava dados no Health Connect.</p>
   <p>Usamos esses dados apenas para fornecer a funcionalidade principal do app (crescimento/progresso da ilha). Não usamos dados de Saúde para publicidade.</p>
 
   <p><strong>b) Dados de Compra e Assinatura</strong></p>
@@ -76,6 +81,7 @@
     <li>Identificador do produto/plano</li>
     <li>Metadados relacionados à transação</li>
   </ul>
+  <p>No Android, o Premium é comprado pelo Google Play Billing, e as mesmas informações de assinatura são processadas pela RevenueCat, nossa provedora de assinaturas para Android.</p>
   <p>Não recebemos os dados completos do seu cartão de pagamento.</p>
 
   <p><strong>c) Dados Técnicos Básicos</strong></p>
@@ -88,6 +94,9 @@
 
   <p><strong>d) Análises</strong></p>
   <p>Usamos o PostHog para coletar dados analíticos anônimos e agregados sobre como os recursos são usados. Nenhuma informação de identificação pessoal é coletada. Você pode recusar desativando as análises nos Ajustes do seu dispositivo.</p>
+
+  <p><strong>e) Backup do Seu Progresso</strong></p>
+  <p>No iPhone, o progresso das suas ilhas pode ser sincronizado entre os seus dispositivos pela sua conta do iCloud. No Android, o App não usa o iCloud; em vez disso, o progresso das suas ilhas é incluído no backup automático do Android (Auto Backup), que o Google armazena na sua Conta do Google para que você possa restaurá-lo em um celular novo. Os backups do Android são gerenciados pelo Google na sua Conta do Google, e você pode desativá-los nas configurações de backup do seu dispositivo. Não temos acesso a esses backups.</p>
 
   <h2>2. Como Usamos as Informações</h2>
   <ul>
@@ -102,18 +111,27 @@
   <p>O Pixel Islands usa o HealthKit exclusivamente para ler a sua contagem de passos e alimentar a progressão dentro do app. Os dados de saúde não são vendidos, não são usados para publicidade e não são compartilhados com corretores de dados.</p>
   <p>Você pode revogar as permissões de Saúde a qualquer momento em: app Apple Saúde → Perfil → Apps → Pixel Islands</p>
 
-  <h2>4. Compartilhamento de Informações</h2>
+  <h2>4. Dados do Health Connect (Android)</h2>
+  <p>No Android, o Pixel Islands usa o Health Connect apenas para ler a sua contagem de passos e viabilizar o progresso no app, o widget da tela inicial e as notificações de marcos. O App pede apenas permissão para ler passos, inclusive em segundo plano. Ele não lê nenhum outro dado de saúde e nunca grava dados no Health Connect.</p>
+  <p>Os dados de passos ficam no seu dispositivo. Eles nunca são vendidos, nunca são usados para publicidade e nunca são compartilhados com terceiros, incluindo corretores de dados. O progresso das suas ilhas, calculado a partir dos seus passos, pode ser incluído no seu próprio backup do Android, conforme descrito na seção 1 e).</p>
+  <p>Você pode revogar o acesso a qualquer momento no Health Connect (Configurações → Health Connect, ou o app Health Connect, dependendo do dispositivo) → Permissões de apps → Pixel Islands.</p>
+  <p>O uso das informações recebidas do Health Connect seguirá a <a href="https://support.google.com/googleplay/android-developer/answer/12991134">Política de Permissões do Health Connect</a>, incluindo os requisitos de uso limitado (Limited Use).</p>
+
+  <h2>5. Compartilhamento de Informações</h2>
   <p>Não vendemos os seus dados pessoais. Podemos compartilhar dados limitados com prestadores de serviços confiáveis apenas conforme necessário para operar o App, tais como:</p>
   <ul>
     <li>Apple (compras dentro do app, infraestrutura da App Store)</li>
     <li>Adapty (gerenciamento de assinaturas e status de direitos de acesso)</li>
+    <li>Google (compras dentro do app pelo Google Play Billing, infraestrutura do Google Play)</li>
+    <li>RevenueCat (gerenciamento de assinaturas e status de direitos de acesso no Android)</li>
   </ul>
   <p>Esses prestadores processam dados sob seus próprios termos e políticas de privacidade. A Adapty pode coletar e processar informações adicionais para fornecer serviços de assinatura e análises (por exemplo, identificadores de dispositivo, endereço IP, eventos de uso do app e diagnósticos relacionados a compras). Para mais detalhes, consulte a <a href="https://adapty.io/privacy/">Política de Privacidade da Adapty</a>.</p>
+  <p>A RevenueCat processa informações semelhantes para fornecer os serviços de assinatura do app para Android. Para mais detalhes, consulte a <a href="https://www.revenuecat.com/privacy">Política de Privacidade da RevenueCat</a>.</p>
 
-  <h2>5. Retenção de Dados</h2>
+  <h2>6. Retenção de Dados</h2>
   <p>Mantemos os dados apenas pelo tempo necessário para fornecer o App e cumprir obrigações legais. Você pode solicitar a exclusão dos dados associados à sua conta/ao seu dispositivo, quando aplicável (veja a seção Contato).</p>
 
-  <h2>6. Suas Opções e Direitos</h2>
+  <h2>7. Suas Opções e Direitos</h2>
   <p>Dependendo da sua localização, você pode ter direito a:</p>
   <ul>
     <li>Acessar dados pessoais</li>
@@ -123,19 +141,19 @@
   </ul>
   <p>Para fazer uma solicitação, entre em contato conosco pelo e-mail abaixo.</p>
 
-  <h2>7. Privacidade de Crianças</h2>
+  <h2>8. Privacidade de Crianças</h2>
   <p>O Pixel Islands não é direcionado a crianças menores de 13 anos (ou a idade mínima exigida na sua jurisdição). Não coletamos intencionalmente informações pessoais de crianças. Se você acredita que uma criança forneceu informações pessoais, entre em contato conosco e tomaremos as providências para excluí-las.</p>
 
-  <h2>8. Segurança</h2>
+  <h2>9. Segurança</h2>
   <p>Usamos medidas técnicas e organizacionais razoáveis para proteger as suas informações. No entanto, nenhum método de transmissão ou armazenamento é 100% seguro.</p>
 
-  <h2>9. Transferências Internacionais</h2>
+  <h2>10. Transferências Internacionais</h2>
   <p>Suas informações podem ser processadas em países diferentes do seu, onde os nossos prestadores de serviços operam. Adotamos medidas razoáveis para garantir que existam proteções adequadas.</p>
 
-  <h2>10. Alterações a Esta Política de Privacidade</h2>
+  <h2>11. Alterações a Esta Política de Privacidade</h2>
   <p>Podemos atualizar esta Política de Privacidade periodicamente. Se fizermos alterações relevantes, atualizaremos a data de "Última atualização" e, quando exigido, forneceremos aviso adicional.</p>
 
-  <h2>11. Fale Conosco</h2>
+  <h2>12. Fale Conosco</h2>
   <p>Se você tiver dúvidas ou solicitações sobre privacidade, entre em contato:</p>
   <p>E-mail: <a href="mailto:supportpixelislands@gmail.com">supportpixelislands@gmail.com</a></p>
 </main>
